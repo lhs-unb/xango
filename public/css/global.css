@@ -1,0 +1,358 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,800);
+
+body,
+html {
+	margin:0;
+	padding:0;
+	color:#000;
+	font-family: 'Raleway', sans-serif;
+	font-size: 13px;
+    height:100%;
+}
+
+input, select, textarea {
+	padding: 4px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 13px;
+}
+
+input[type='image'] {
+	padding: 0px;
+	vertical-align: middle;
+}
+
+input[readonly] {
+	background-color: #ededed;
+}
+
+input[disabled],select[disabled],textarea[disabled] {
+	background-color: #ededed;
+}
+
+a { color:#000; }
+fieldset { border: 0; }
+img { vertical-align: middle; }
+table { border-collapse:collapse;}
+
+table td, table th {
+	padding: 5px;
+}
+
+.error {
+    background:#ffecec url('../img/icons/set1/block_16.png') no-repeat right 50%;
+    border:1px solid #f5aca6;
+}
+
+/* Estrutura */
+
+#wrap {
+	width:100%;
+	margin:0 auto;
+    height:100%;
+}
+#header {
+	padding: 7px 30px;
+	background:#3f3f3f;
+}
+
+h1 {
+	margin:0;
+	color: #fff;
+	font-size: 22px;
+	width: 100%;
+}
+
+#sidebar {
+	float:left;
+	width:190px;
+	background:#D6D6D6;
+	border-right: 1px solid #3f3f3f;
+    overflow:hidden;
+}
+#sidebar p {
+	padding: 0 10px;
+}
+
+#main {
+	background:#FFF;
+    margin-left: 220px;
+    padding: 20px 20px 0 0;
+}
+
+#login {
+	margin: auto auto;
+	width: 400px;
+	padding: 50px;
+}
+
+h2 {
+	margin:0 0 1em;
+}
+
+#footer {
+	clear:both;
+	border-top: 1px solid #3f3f3f;
+	padding:5px 10px;
+	background:#aaa;
+	font-size: 10px;
+}
+
+/* Tabela Busca */
+.tabela-busca {
+	width: 100%;
+}
+
+.tabela-busca thead th {
+	text-align: left;
+	border-bottom: 1px solid #3f3f3f;
+}
+
+.tabela-busca thead th[data-sort] {
+	cursor: pointer;
+	background: url(../img/sorting.png) no-repeat 0 50%;
+	padding-left: 12px;
+	
+}
+
+.tabela-busca tbody td {
+	text-align: left;
+	border-bottom: 1px solid #3f3f3f;
+}
+
+tr td.actions {
+	text-align: right;
+}
+
+.tabela-busca tbody tr:hover { background:#cccccc; }
+
+/* Menu */
+#menu {
+	border-bottom: 1px solid #3f3f3f;
+}
+
+.item-menu {
+	padding: 8px;
+	border-left: 4px solid #3f3f3f;
+	border-top: 1px solid #3f3f3f;
+	cursor: pointer;
+}
+.item-menu.on {
+	background:#910D0D;
+	color: #fff;
+}
+
+.menu-container {
+	border-left: 8px solid #3f3f3f;
+	background: #fff;
+}
+
+.item-submenu {
+	padding: 8px;
+	border-top: 1px dotted #3f3f3f;
+}
+
+.item-submenu a {
+	text-decoration: none;
+}
+.item-submenu a:hover {
+	text-decoration: underline;
+}
+
+/* Button */
+.div-botoes {
+	margin-bottom: 15px;
+}
+
+.btn {
+  background: #e62222;
+  background-image: -webkit-linear-gradient(top, #e62222, #910D0D);
+  background-image: -moz-linear-gradient(top, #e62222, #910D0D);
+  background-image: -ms-linear-gradient(top, #e62222, #910D0D);
+  background-image: -o-linear-gradient(top, #e62222, #910D0D);
+  background-image: linear-gradient(to bottom, #e62222, #910D0D);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: 'Raleway', sans-serif;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 5px 10px;
+  text-decoration: none;
+  text-align: center;
+  border: 0;
+  cursor: pointer;
+}
+
+
+.btn:hover {
+  background: #910D0D;
+  background-image: -webkit-linear-gradient(top, #910D0D, #e62222);
+  background-image: -moz-linear-gradient(top, #910D0D, #e62222);
+  background-image: -ms-linear-gradient(top, #910D0D, #e62222);
+  background-image: -o-linear-gradient(top, #910D0D, #e62222);
+  background-image: linear-gradient(to bottom, #910D0D, #e62222);
+  text-decoration: none;
+}
+
+/* Forms */
+.form-edit label {
+	width: 150px;
+	display: inline-block;
+}
+.form-edit ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.form-edit ul li {
+	padding-top: 5px;
+}
+.form-edit ul li.botoes {
+	padding-top: 15px;
+}
+
+/* Message box */
+#system_msg_box {
+	border: 2px solid yellow;
+	padding: 10px;
+	padding-left: 40px; 
+	margin-bottom: 10px;
+    border-radius:10px;
+}
+
+#system_msg_box.type1 {
+    background:#e9ffd9 url('../img/icons/set1/tick_16.png') no-repeat 10px 50%;
+    border:1px solid #a6ca8a;
+}
+#system_msg_box.type2 {
+    background:#ffecec url('../img/icons/set1/block_16.png') no-repeat 10px 50%;
+    border:1px solid #f5aca6;
+}
+#system_msg_box.type3 {
+    background:#fff8c4 url('../img/icons/set1/warning_16.png') no-repeat 10px 50%;
+    border:1px solid #f2c779;
+}
+#system_msg_box.type4 {
+    background:#e3f7fc url('../img/icons/set1/info_16.png') no-repeat 10px 50%;
+    border:1px solid #8ed9f6;
+}
+
+/* Validate */
+label.validate_error {
+	/*width: 250px;*/
+	font-size: 10px;
+	margin-left: 10px;
+	margin-bottom: 5px;
+	padding: 3px;
+    border-radius:5px;
+    background:#ffecec;
+    border:1px solid #f5aca6;
+}
+
+/* Transcription */
+
+#fonte_transcricao div {
+	padding: 10px;
+    border-radius:5px;
+    border:1px solid #3f3f3f;	
+	margin-bottom: 10px;
+	float: left;
+	width: 98%;
+}
+
+#fonte_transcricao div div {
+	padding: 0;
+	margin: 0;
+    border: 0;
+    border-radius:0;
+	width: 100%;
+}
+
+#fonte_transcricao h4 {
+	margin: 0;
+	padding: 0 0 5px 0;
+}
+
+#fonte_transcricao div#dados {
+	width: 50%;
+}
+
+#fonte_transcricao div#dados span.label {
+	width: 15%;
+	display: inline-block;
+}
+#fonte_transcricao div#dados span.info {
+	width: 50%;
+	display: inline-block;
+}
+
+#fonte_transcricao div#acoes {
+	width: 15%;
+	margin-left: 10px;
+	text-align: center;
+}
+
+#fonte_transcricao div#acoes input {
+	margin-bottom: 5px;
+}
+
+
+
+
+
+
+
+/* Ato edit */
+#ato {
+	width: 800px;
+}
+#ato div.label {
+	width: 25%;
+	float: left;
+	line-height: 22px;
+	margin-bottom:2px;
+}
+
+#ato div.info {
+	width: 59%;
+	float: left;
+	margin-bottom:2px;
+}
+
+#ato div.info2{
+	width: 15%;
+	float: left;
+	line-height: 22px;
+	margin-bottom:2px;
+}
+
+#ato div.vinculantes{
+	margin-left: 15px;
+	width: 120px;
+	float: left;
+	line-height: 22px;
+	margin-bottom:2px;
+}
+#ato div.descritivo{
+	text-align: center;
+	width: 150px;
+	float: left;
+	line-height: 22px;
+	margin-bottom:2px;
+}
+
+#ato div.block {
+	padding: 10px;
+    border-radius:5px;
+    border:1px solid #3f3f3f;	
+	margin-top: 10px;
+	width: 98%;
+	float: left;
+}
+
+#ato h6 {
+	margin: 0;
+	padding: 0;
+	margin-bottom: 5px;
+}

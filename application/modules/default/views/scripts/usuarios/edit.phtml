@@ -1,0 +1,44 @@
+<form action="<?php echo $this->url(array('controller'=>'usuarios', 'action'=>'save'),'default',true); ?>" method="POST">
+<fieldset class="form-edit">
+	<input type="hidden" name="usu_id" id="usu_id" value="<?php echo $this->usuario['usu_id']; ?>">
+	
+	<ul>
+		<li>
+			<label for="usu_nome">Nome</label>
+			<input type="text" name="usu_nome" id="usu_nome" value="<?php echo $this->usuario['usu_nome']; ?>" size="50" required>
+		</li>
+		<li>
+			<label for="usu_email">E-mail</label>
+			<input type="text" name="usu_email" id="usu_email" value="<?php echo $this->usuario['usu_email']; ?>" size="50" required>
+		</li>
+		<li>
+			<label for="usu_login">Login</label>
+			<input type="text" name="usu_login" id="usu_login" value="<?php echo $this->usuario['usu_login']; ?>" size="20" required>
+		</li>
+		<li>
+			<label for="usu_senha">Senha</label>
+			<input type="password" name="usu_senha" id="usu_senha" value="" size="20" <?php if(empty($this->usuario['usu_id'])) { echo "required"; } ?>>
+		</li>
+		<li>
+			<label for="usu_admin">Admin?</label>
+			<input type="checkbox" value="1" name="usu_admin" id="usu_admin" <?php if($this->usuario['usu_admin'] == 1) { echo "checked"; } ?>> Sim
+		</li>
+		<li>
+			<label for="usu_ativo">Ativo?</label>
+			<input type="checkbox" value="1" name="usu_ativo" id="usu_ativo" <?php if($this->usuario['usu_ativo'] == 1) { echo "checked"; } ?>> Sim
+		</li>
+		<li>
+			<label for="usu_score">Score</label>
+			<input type="text" name="usu_score" id="usu_score" value="<?php echo $this->usuario['usu_score']; ?>" size="20" readonly>
+		</li>
+		<li>
+			<label for="usu_level">Level</label>
+			<input type="text" name="usu_level" id="usu_level" value="<?php echo $this->usuario['usu_level']; ?>" size="20" readonly>
+		</li>
+		<li class="botoes">
+			<input type="submit" class="btn" value="Salvar"/>
+			<input type="button" class="btn" value="Voltar" onClick='$.featherlight.close();' />
+		</li>
+	</ul>
+</fieldset>
+</form>

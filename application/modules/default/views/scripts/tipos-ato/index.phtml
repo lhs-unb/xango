@@ -1,0 +1,29 @@
+<div class="div-botoes">
+	<a class="btn" href="<?php echo $this->url(array('controller'=>'tipos-ato', 'action'=>'edit'),'default',true) ?>" lightbox="true">
+		<img src="/img/icons/set1/plus_16.png"> Novo
+	</a>
+</div>
+
+<table class="tabela-busca">
+	<thead>
+		<tr>
+			<th width="4%" data-sort="int">Id</th>
+			<th width="22%" data-sort="string">Nome</th>
+			<th width="35%">Descrição</th>
+			<th width="5%"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach($this->tipos as $tipo) { ?>
+		<tr>
+			<td><?php echo $tipo->tpa_id; ?></td>
+			<td><?php echo $tipo->tpa_nome; ?></td>
+			<td><?php echo $tipo->tpa_descricao; ?></td>
+			<td class="actions">
+				<a href="<?php echo $this->url(array('controller'=>'tipos-ato', 'action'=>'edit', 'id'=>$tipo->tpa_id),'default',true) ?>" lightbox="true"><img src="/img/icons/set1/document_pencil_16.png"></a>
+				<a href="<?php echo $this->url(array('controller'=>'tipos-ato', 'action'=>'delete', 'id'=>$tipo->tpa_id),'default',true) ?>" delete="true"><img src="/img/icons/set1/delete_16.png"></a>
+			</td>
+		</tr>
+		<?php } ?>
+	</tbody>
+</table>

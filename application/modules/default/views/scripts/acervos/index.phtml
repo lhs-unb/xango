@@ -1,0 +1,45 @@
+<?php
+$tipos_acervo = array(
+	1 => "Entidade Custodiadora",
+	2 => "Fundo ou Coleção",
+	3 => "Série",
+	4 => "Processo ou Dossiê",
+	5 => "Item Documental"
+);
+?>
+
+<div class="div-botoes">
+	<a class="btn" href="<?php echo $this->url(array('controller'=>'acervos', 'action'=>'edit'),'default',true) ?>" lightbox="true">
+		<img src="/img/icons/set1/plus_16.png"> Novo
+	</a>
+</div>
+
+<table class="tabela-busca">
+	<thead>
+		<tr>
+			<th width="4%" data-sort="int">Id</th>
+			<th width="15%" data-sort="string">Cota</th>
+			<th width="22%" data-sort="string">Nome</th>
+			<th width="35%">Descrição</th>
+			<th width="15%" data-sort="string">Tipo</th>
+			<th width="4%" data-sort="string">Pai</th>
+			<th width="5%"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach($this->acervos as $acervo) { ?>
+		<tr>
+			<td><?php echo $acervo->acv_id; ?></td>
+			<td><?php echo $acervo->acv_cota; ?></td>
+			<td><?php echo $acervo->acv_nome; ?></td>
+			<td><?php echo $acervo->acv_descricao; ?></td>
+			<td><?php echo $tipos_acervo[$acervo->acv_tipo_acervo]; ?></td>
+			<td><?php echo $acervo->acv_id_pai; ?></td>
+			<td class="actions">
+				<a href="<?php echo $this->url(array('controller'=>'acervos', 'action'=>'edit', 'id'=>$acervo->acv_id),'default',true) ?>" lightbox="true"><img src="/img/icons/set1/document_pencil_16.png"></a>
+				<a href="<?php echo $this->url(array('controller'=>'acervos', 'action'=>'delete', 'id'=>$acervo->acv_id),'default',true) ?>" delete="true"><img src="/img/icons/set1/delete_16.png"></a>
+			</td>
+		</tr>
+		<?php } ?>
+	</tbody>
+</table>

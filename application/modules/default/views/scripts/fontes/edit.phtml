@@ -1,0 +1,56 @@
+<form action="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'save'),'default',true); ?>" method="POST">
+<fieldset class="form-edit">
+	<input type="hidden" name="ftn_id" id="ftn_id" value="<?php echo $this->fonte['ftn_id']; ?>">
+	<input type="hidden" name="redirect" id="redirect" value="<?php echo $this->redirect; ?>">
+	
+	<ul>
+		<li>
+			<label for="gtr_id">Grupo de Trabalho</label>
+			<select name="gtr_id" id="gtr_id">
+				<?php				
+				foreach($this->gts as $gt) { 
+					$select = ($this->fonte['gtr_id'] == $gt['gtr_id']) ? " selected" : "";
+				?>
+					<option value="<?php echo $gt['gtr_id']; ?>" <?php echo $select; ?>><?php echo $gt['gtr_nome']; ?></option>
+				<?php } ?>
+			<select>
+		</li>
+		<li>
+			<label for="acv_id">Acervo</label>
+			<select name="acv_id" id="acv_id">
+				<?php foreach($this->acervos as $acervo) { 
+					$select = ($this->fonte['acv_id'] == $acervo->acv_id) ? " selected" : "";
+				?>
+					<option value="<?php echo $acervo->acv_id; ?>" <?php echo $select; ?>><?php echo $acervo->acv_nome; ?></option>
+				<?php } ?>
+			<select>
+		</li>
+		<li>
+			<label for="ftn_nome">Nome</label>
+			<input type="text" name="ftn_nome" id="ftn_nome" value="<?php echo $this->fonte['ftn_nome']; ?>" size="50" required>
+		</li>
+		<li>
+			<label for="ftn_cota">Cota</label>
+			<input type="text" name="ftn_cota" id="ftn_cota" value="<?php echo $this->fonte['ftn_cota']; ?>" size="50" required>
+		</li>
+		<li>
+			<label for="ftn_descricao">Descrição</label>
+			<textarea name="ftn_descricao" id="ftn_descricao" rows="4" cols="80"><?php echo $this->fonte['ftn_descricao']; ?></textarea>
+		</li>
+		<li>
+			<label for="ftn_convencao">Convenção</label>
+			<select name="ftn_convencao" id="ftn_convencao" required>
+				<option></option>
+				<option value="1" <?php if($this->fonte['ftn_convencao'] == 1) { echo "selected"; } ?>>Transcrição atualizada</option>
+				<option value="2" <?php if($this->fonte['ftn_convencao'] == 2) { echo "selected"; } ?>>Transcrição completa</option>
+				<option value="3" <?php if($this->fonte['ftn_convencao'] == 3) { echo "selected"; } ?>>Indexação de imagens</option>
+				<option value="4" <?php if($this->fonte['ftn_convencao'] == 4) { echo "selected"; } ?>>Criação de índices</option>
+			<select>
+		</li>
+		<li class="botoes">
+			<input type="submit" class="btn" value="Salvar"/>
+			<input type="button" class="btn" value="Voltar" onClick="$.featherlight.close();"/>
+		</li>
+	</ul>
+</fieldset>
+</form>

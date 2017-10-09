@@ -1,0 +1,32 @@
+<form action="<?php echo $this->url(array('controller'=>'tipos-atributo', 'action'=>'save'),'default',true); ?>" method="POST">
+<fieldset class="form-edit">	
+	<ul>
+		<li>
+			<label for="ttr_id">Id</label>
+			<input type="text" name="ttr_id" id="ttr_id" value="<?php echo $this->tipo['ttr_id']; ?>" size="50" required <?php echo (!empty($this->tipo['ttr_id'])) ? "readonly" : ""; ?>>
+		</li>
+		<li>
+			<label for="ttr_nome">Nome</label>
+			<input type="text" name="ttr_nome" id="ttr_nome" value="<?php echo $this->tipo['ttr_nome']; ?>" size="50" required>
+		</li>
+		<li>
+			<label for="ttr_tipo">Tipo</label>
+			<select name="ttr_tipo" id="ttr_tipo" required>
+				<option></option>
+				<option value="1" <?php if($this->tipo['ttr_tipo'] == '1') { echo "selected"; } ?>>Texto</option>
+				<option value="2" <?php if($this->tipo['ttr_tipo'] == '2') { echo "selected"; } ?>>Data</option>
+				<option value="3" <?php if($this->tipo['ttr_tipo'] == '3') { echo "selected"; } ?>>Valor númerico</option>
+				<option value="4" <?php if($this->tipo['ttr_tipo'] == '4') { echo "selected"; } ?>>Opção</option>
+			<select>
+		</li>
+		<li>
+			<label for="ttr_descricao">Descrição</label>
+			<textarea name="ttr_descricao" id="ttr_descricao" rows="4" cols="80"><?php echo $this->tipo['ttr_descricao']; ?></textarea>
+		</li>
+		<li class="botoes">
+			<input type="submit" class="btn" value="Salvar"/>
+			<input type="button" class="btn" value="Voltar" onClick="$.featherlight.close();" />
+		</li>
+	</ul>
+</fieldset>
+</form>

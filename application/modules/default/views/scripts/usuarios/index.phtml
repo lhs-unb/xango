@@ -1,0 +1,35 @@
+<div class="div-botoes">
+	<a class="btn" href="<?php echo $this->url(array('controller'=>'usuarios', 'action'=>'edit'),'default',true) ?>" lightbox="true">
+		<img src="/img/icons/set1/plus_16.png"> Novo
+	</a>
+</div>
+
+<table class="tabela-busca">
+	<thead>
+		<tr>
+			<th width="5%" data-sort="int">Id</th>
+			<th width="25%" data-sort="string">Nome</th>
+			<th width="18%" data-sort="string">Login</th>
+			<th width="32%" data-sort="string">E-mail</th>
+			<th width="7%" data-sort="string">Ativo</th>
+			<th width="7%" data-sort="string">Admin</th>
+			<th width="6%"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach($this->usuarios as $usuario) { ?>
+		<tr>
+			<td><?php echo $usuario->usu_id; ?></td>
+			<td><?php echo $usuario->usu_nome; ?></td>
+			<td><?php echo $usuario->usu_login; ?></td>
+			<td><?php echo $usuario->usu_email; ?></td>
+			<td><?php echo ($usuario->usu_ativo == 1) ? 'X' : ""; ?></td>
+			<td><?php echo ($usuario->usu_admin == 1) ? 'X' : ""; ?></td>
+			<td class="actions">
+				<a href="<?php echo $this->url(array('controller'=>'usuarios', 'action'=>'edit', 'id'=>$usuario->usu_id),'default',true) ?>" lightbox="true"><img src="/img/icons/set1/document_pencil_16.png"></a>
+				<a href="<?php echo $this->url(array('controller'=>'usuarios', 'action'=>'delete', 'id'=>$usuario->usu_id),'default',true) ?>" delete="true"><img src="/img/icons/set1/delete_16.png"></a>
+			</td>
+		</tr>
+		<?php } ?>
+	</tbody>
+</table>

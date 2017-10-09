@@ -1,0 +1,55 @@
+<?php
+$tipos_convencao = array(
+	1 => "Transcrição atualizada",
+	2 => "Transcrição completa",
+	3 => "Indexação de imagens",
+	4 => "Criação de índices"
+);
+
+$tipos_status = array(
+	1 => "Em transcrição",
+	2 => "Em revisão",
+	3 => "Transcrita",
+	4 => "Indexada",
+	5 => "Interrompida"
+);
+
+?>
+
+<div class="div-botoes">
+	<a class="btn" href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'edit'),'default',true) ?>" lightbox="true">
+		<img src="/img/icons/set1/plus_16.png"> Novo
+	</a>
+</div>
+
+<table class="tabela-busca">
+	<thead>
+		<tr>
+			<th width="3%" data-sort="int">Id</th>
+			<th width="10%" data-sort="string">Cota</th>
+			<th width="20%" data-sort="string">Nome</th>
+			<th width="15%" >Convenção<br>Descrição</th>
+			<th width="45%">Descrição</th>
+			<th width="7%"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach($this->fontes as $fonte) { ?>
+		<tr>
+			<td><?php echo $fonte->ftn_id; ?></td>
+			<td><?php echo $fonte->ftn_cota; ?></td>
+			<td><?php echo $fonte->ftn_nome; ?></td>
+			<td>
+				<?php echo $tipos_convencao[$fonte->ftn_convencao]; ?><br/>
+				<?php echo $tipos_status[$fonte->ftn_status]; ?>
+			</td>
+			<td><?php echo $fonte->ftn_descricao; ?></td>
+			<td class="actions">
+				<a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'transcription', 'id'=>$fonte->ftn_id),'default',true) ?>"><img src="/img/icons/set1/wand_16.png"></a>
+				<a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'edit', 'id'=>$fonte->ftn_id),'default',true) ?>" lightbox="true"><img src="/img/icons/set1/document_pencil_16.png"></a>
+				<a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'delete', 'id'=>$fonte->ftn_id),'default',true) ?>" delete="true"><img src="/img/icons/set1/delete_16.png"></a>
+			</td>
+		</tr>
+		<?php } ?>
+	</tbody>
+</table>

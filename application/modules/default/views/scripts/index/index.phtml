@@ -1,0 +1,20 @@
+<h2>Ranking</h2>
+
+<table width="50%">
+	<thead>
+		<tr>
+			<th width="70%" data-sort="string">Nome</th>
+			<th width="15%" data-sort="string">Level</th>
+			<th width="15%" data-sort="string">Score</th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach($this->usuarios as $usuario) { ?>
+		<tr>
+			<td><?php echo $usuario->usu_nome; ?></td>
+			<td><?php echo $usuario->usu_level; ?></td>
+			<td><?php echo $usuario->usu_score; ?></td>
+		</tr>
+		<?php } ?>
+	</tbody>
+</table>

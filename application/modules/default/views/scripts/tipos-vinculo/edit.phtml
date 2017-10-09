@@ -1,0 +1,26 @@
+<form action="<?php echo $this->url(array('controller'=>'tipos-vinculo', 'action'=>'save'),'default',true); ?>" method="POST">
+<fieldset class="form-edit">	
+	<ul>
+		<li>
+			<label for="tpv_id">Id</label>
+			<input type="text" name="tpv_id" id="tpv_id" value="<?php echo $this->tipo['tpv_id']; ?>" size="50" required <?php echo (!empty($this->tipo['tpv_id'])) ? "readonly" : ""; ?>>
+		</li>
+		<li>
+			<label for="tpv_nome">Nome</label>
+			<input type="text" name="tpv_nome" id="tpv_nome" value="<?php echo $this->tipo['tpv_nome']; ?>" size="50" required>
+		</li>
+		<li>
+			<label for="tpv_nome">Descritivo</label>
+			<input type="text" name="tpv_descritivo" id="tpv_descritivo" value="<?php echo $this->tipo['tpv_descritivo']; ?>" size="80" required>
+		</li>
+		<li>
+			<label for="tpv_descricao">Descrição</label>
+			<textarea name="tpv_descricao" id="tpv_descricao" rows="4" cols="80"><?php echo $this->tipo['tpv_descricao']; ?></textarea>
+		</li>
+		<li class="botoes">
+			<input type="submit" class="btn" value="Salvar"/>
+			<input type="button" class="btn" value="Voltar" onClick="$.featherlight.close();" />
+		</li>
+	</ul>
+</fieldset>
+</form>

@@ -1,0 +1,80 @@
+<?php
+$tipos_convencao = array(
+	1 => "Transcrição atualizada",
+	2 => "Transcrição completa",
+	3 => "Indexação de imagens",
+	4 => "Criação de índices"
+);
+
+$tipos_status = array(
+	1 => "Em transcrição",
+	2 => "Em revisão",
+	3 => "Transcrita",
+	4 => "Indexada",
+	5 => "Interrompida"
+);
+
+?>
+
+<div id="fonte_transcricao">
+	<div id="dados">
+		<h4><?php echo $this->fonte['ftn_nome']; ?> (<?php echo $this->fonte['ftn_cota']; ?>) <a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'edit', 'id'=>$this->fonte['ftn_id'], 'redirect' => 'transcription'),'default',true) ?>" lightbox="true"><img src="/img/icons/set1/document_pencil_16.png"></a></h4>
+		<span class="label">Acervo: </span><span class="info"><?php echo $this->fonte['acv_nome']; ?></span>
+		<span class="label">Grupo de Trabalho: </span><span class="info"><?php echo $this->fonte['gtr_nome']; ?></span>
+		<span class="label">Convenção: </span><span class="info"><?php echo $tipos_convencao[$this->fonte['ftn_convencao']]; ?></span>
+		<span class="label">Status: </span><span class="info"><?php echo $tipos_status[$this->fonte['ftn_status']]; ?></span>
+		
+		<?php if($this->fonte['ftn_nome']) echo "<p>". $this->fonte['ftn_descricao'] ."<p>"; ?>
+		
+		
+		<span class="label">Editores: </span><span class="info">TODO</span>
+	</div>
+
+	<div id="acoes">
+		<h4>Ações</h4>
+		<input type="button" class="btn" value="Habilitar Transcrição"/> <br/>
+		<input type="button" class="btn" value="Alterar Status"/>
+	</div>
+
+	<div id="resumo">
+		<h4>Resumo/Estatísticas</h4>
+		Atos: <?php echo count($this->fonte['atos']); ?><br>
+		Grupos de Informação: <br>
+		Atributos: <br>
+	</div>
+	
+	<div id="imagens">
+		<h4>Imagens</h4>
+		TODO
+	</div>
+
+	<div id="detalhes">
+		<h4>Indexação</h4>
+		<em><a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'ato-edit','ftn_id'=>$this->fonte['ftn_id']),'default',true) ?>" lightbox="modal"><img src="/img/icons/set1/plus_16.png"> Ato</a></em>
+		
+		<table class="tabela-busca">
+			<thead>
+				<tr>
+					<th width="20%">Referência</th>
+					<th width="30%">Tipo ato</th>
+					<th width="40%"></th>
+					<th width="10%">Ações</th>
+				</tr>
+			</thead>
+			<tbody>
+			<?php foreach($this->fonte['atos'] as $ato) { ?>
+				<tr>
+					<td><?php echo $ato->ato_referencia; ?></td>
+					<td><?php echo $ato->tpa_nome; ?></td>
+					<td></td>
+					<td>					
+						<a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'ato-edit','ato_id'=>$ato->ato_id),'default',true) ?>" lightbox="modal"><img src="/img/icons/set1/document_pencil_16.png"></a>
+						<a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'ato-delete','ato_id'=>$ato->ato_id),'default',true) ?>" delete="true"><img src="/img/icons/set1/delete_16.png"></a>
+					</td>
+				</tr>
+			<?php } ?>
+			</tbody>
+		</table>
+	</div>
+</div>
+

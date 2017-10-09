@@ -1,0 +1,40 @@
+<?php echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Xango</title>
+	
+	<?php echo $this->headLink()->appendStylesheet('/css/global.css') ?>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>	
+	<?php $this->headScript()->appendFile('/js/haddock.js','text/javascript'); ?>
+	<?php $this->headScript()->appendFile('/js/stupidtable.min.js','text/javascript'); ?>
+	 
+	<?php echo $this->headScript(); ?>
+	<?php echo $this->headMeta(); ?>
+	<?php echo $this->headTitle(); ?>
+	<?php echo $this->headLink(); ?>	
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<h1><img src="/img/oxe.png"> Xango</h1>
+		</div>
+		<div id="login">
+			<?php if(isset($this->system_message)) {				
+				echo "<div id='system_msg_box' class='type". $this->system_message['type'] ."'>". $this->system_message['msg'] ."</div>";
+			}
+			?>
+			<?php echo $this->layout()->content ?>
+		</div>
+		
+		<div id="footer">
+			Laboratório de História Social - Universidade de Brasília
+			<code><?php echo $this->inlineScript(); ?></code>
+		</div>
+	</div>
+</body>
+</html>
+
+
+

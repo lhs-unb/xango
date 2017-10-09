@@ -1,0 +1,20 @@
+<form action="<?php echo $this->url(array('controller'=>'grupos-trabalho', 'action'=>'save'),'default',true); ?>" method="POST">
+<fieldset class="form-edit">
+	<input type="hidden" name="gtr_id" id="gtr_id" value="<?php echo $this->gt['gtr_id']; ?>">
+	
+	<ul>
+		<li>
+			<label for="gtr_nome">Nome</label>
+			<input type="text" name="gtr_nome" id="gtr_nome" value="<?php echo $this->gt['gtr_nome']; ?>" size="50" required>
+		</li>
+		<li>
+			<label for="gtr_descricao">Descrição</label>
+			<textarea name="gtr_descricao" id="gtr_descricao" rows="4" cols="80"><?php echo $this->gt['gtr_descricao']; ?></textarea>
+		</li>
+		<li class="botoes">
+			<input type="submit" class="btn" value="Salvar"/>
+			<input type="button" class="btn" value="Voltar"  onClick="$.featherlight.close();" />
+		</li>
+	</ul>
+</fieldset>
+</form>

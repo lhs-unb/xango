@@ -1,0 +1,35 @@
+<div class="div-botoes">
+	<a class="btn" href="<?php echo $this->url(array('controller'=>'grupos-trabalho', 'action'=>'edit'),'default',true) ?>" lightbox="true">
+		<img src="/img/icons/set1/plus_16.png"> Novo
+	</a>
+</div>
+
+<table class="tabela-busca">
+	<thead>
+		<tr>
+			<th width="5%" data-sort="int">Id</th>
+			<th width="25%" data-sort="string">Nome</th>
+			<th width="40%">Descrição</th>
+			<th width="20%">Membros</th>
+			<th width="5%"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach($this->gts as $gt) { ?>
+		<tr>
+			<td><?php echo $gt['gtr_id']; ?></td>
+			<td><?php echo $gt['gtr_nome']; ?></td>
+			<td><?php echo $gt['gtr_descricao']; ?></td>
+			<td>
+				<ul>
+					<?php foreach($gt['gtr_membros'] as $membro) { echo "<li>". $membro->usu_nome ." (". $membro->aug_papel .")</li>"; }; ?>
+				</ul>
+			</td>
+			<td class="actions">
+				<a href="<?php echo $this->url(array('controller'=>'grupos-trabalho', 'action'=>'edit', 'id'=>$gt['gtr_id']),'default',true); ?>" lightbox="true"><img src="/img/icons/set1/document_pencil_16.png"></a>
+				<a href="<?php echo $this->url(array('controller'=>'grupos-trabalho', 'action'=>'delete', 'id'=>$gt['gtr_id']),'default',true); ?>" delete="true"><img src="/img/icons/set1/delete_16.png"></a>
+			</td>
+		</tr>
+		<?php } ?>
+	</tbody>
+</table>

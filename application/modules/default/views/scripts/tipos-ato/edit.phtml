@@ -1,0 +1,22 @@
+<form action="<?php echo $this->url(array('controller'=>'tipos-ato', 'action'=>'save'),'default',true); ?>" method="POST">
+<fieldset class="form-edit">	
+	<ul>
+		<li>
+			<label for="tpa_id">Id</label>
+			<input type="text" name="tpa_id" id="tpa_id" value="<?php echo $this->tipo['tpa_id']; ?>" size="50" required <?php echo (!empty($this->tipo['tpa_id'])) ? "readonly" : ""; ?>>
+		</li>
+		<li>
+			<label for="tpa_nome">Nome</label>
+			<input type="text" name="tpa_nome" id="tpa_nome" value="<?php echo $this->tipo['tpa_nome']; ?>" size="50" required>
+		</li>
+		<li>
+			<label for="tpa_descricao">Descrição</label>
+			<textarea name="tpa_descricao" id="tpa_descricao" rows="4" cols="80"><?php echo $this->tipo['tpa_descricao']; ?></textarea>
+		</li>
+		<li class="botoes">
+			<input type="submit" class="btn" value="Salvar"/>
+			<input type="button" class="btn" value="Voltar" onClick="$.featherlight.close();" />
+		</li>
+	</ul>
+</fieldset>
+</form>

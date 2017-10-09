@@ -1,0 +1,22 @@
+<form action="<?php echo $this->url(array('controller'=>'tipos-funcao', 'action'=>'save'),'default',true); ?>" method="POST">
+<fieldset class="form-edit">	
+	<ul>
+		<li>
+			<label for="tpf_id">Id</label>
+			<input type="text" name="tpf_id" id="tpf_id" value="<?php echo $this->tipo['tpf_id']; ?>" size="50" required <?php echo (!empty($this->tipo['tpf_id'])) ? "readonly" : ""; ?>>
+		</li>
+		<li>
+			<label for="tpf_nome">Nome</label>
+			<input type="text" name="tpf_nome" id="tpf_nome" value="<?php echo $this->tipo['tpf_nome']; ?>" size="50" required>
+		</li>
+		<li>
+			<label for="tpf_descricao">Descrição</label>
+			<textarea name="tpf_descricao" id="tpf_descricao" rows="4" cols="80"><?php echo $this->tipo['tpf_descricao']; ?></textarea>
+		</li>
+		<li class="botoes">
+			<input type="submit" class="btn" value="Salvar"/>
+			<input type="button" class="btn" value="Voltar" onClick="$.featherlight.close();" />
+		</li>
+	</ul>
+</fieldset>
+</form>

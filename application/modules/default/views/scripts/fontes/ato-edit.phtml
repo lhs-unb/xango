@@ -1,0 +1,633 @@
+<script language="javascript">
+$(document).ready(function() {
+	// todo lista mestra de msg
+	var msg = [];
+	msg[3] = "A inserção de novos atributos está bloqueada. Verifique se o cabeçalho do ato foi preenchido.";
+	msg[4] = "Salve o novo grupo de informação antes de inserir novos atributos.";
+	msg[5] = "Escolha um grupo de informaçào válido.";
+	
+	var response;
+    $.validator.addMethod(
+        "validGi", 
+        function(value, element) {
+            $.ajax({
+                type: "POST",
+                url: "<?php echo $this->url(array('controller'=>'fontes', 'action'=>'gi-validation'),'default',true) ?>",
+                data: "gi="+value,
+                dataType:"html",
+                success: function(msg)
+                {
+                    response = ( msg == 'true' ) ? true : false;
+                }
+             });
+            return response;
+        },
+        msg[5]
+    );
+	
+	/* Ato */
+	$("#form-ato").validate({ 
+		submitHandler: function(form) {
+			$(form).ajaxSubmit({
+				cache: "false",
+				data: {
+					'ato_id' : $("#ato_id").val(),
+					'ftn_id' : $("#ftn_id").val(),
+					'ato_referencia' : $("#ato_referencia").val(),
+					'tpa_id' : $("#tpa_id :selected").val()
+				},
+				success: function(html) {
+					if(html != "error") {
+						retorno = jQuery.parseJSON(html);
+						$("#ato_id").val(retorno.ato_id);
+						$("#tpa_id").attr("disabled", true);
+						$("#ato_referencia").attr("disabled", true);
+						$("#btn-tipo-ato-save").hide();
+						$("#btn-tipo-ato-edit").show();
+					}
+				}
+			});
+		},
+		errorPlacement: function(error, element) {}
+	});
+	
+	$("#btn-tipo-ato-save").on("click", function() {
+		$("#form-ato").submit();
+	});
+	$("#btn-tipo-ato-edit").on("click", function() {
+		$("#tpa_id").attr("disabled", false);
+		$("#ato_referencia").attr("disabled", false);
+		$("#btn-tipo-ato-save").show();
+		$("#btn-tipo-ato-edit").hide();
+	});
+
+	/* Atributo do Ato */	
+	$("#btn-atributo-ato-add").on('click', function() {
+		if($("#ato_id").val() != "") {
+			$("#count_atributo").val(Math.random().toString(36).substring(5));
+			$("#atributos_area").append($("#model_atributo").clone().attr('id', 'item_atributo').attr('sequencia', $("#count_atributo").val()));
+			
+			$("#item_atributo[sequencia='"+ $("#count_atributo").val() +"'] [sequencia]").each(function() { $(this).attr('sequencia', $("#count_atributo").val()); });
+
+			atributo_ato_form($(".form-atributo-ato[sequencia='"+ $("#count_atributo").val() +"']"));			
+			atributo_ato_delete($(".btn-atributo-ato-delete[sequencia='"+ $("#count_atributo").val() +"']"));
+			
+			$($(".form-atributo-ato[sequencia='"+ $("#count_atributo").val() +"']")).find("input").val("").attr('disabled', false);
+		}
+		else {
+			alert(msg[3]);
+		}
+	});
+	$(".btn-atributo-ato-delete[sequencia!='0']").each(function() { atributo_ato_delete($(this)); });
+	$(".form-atributo-ato[sequencia!='0']").each(function() { atributo_ato_form($(this)); });
+	
+	
+	/* Vínculo */	
+	$("#btn-vinculo-add").on('click', function() {
+		if($("#ato_id").val() != "") {
+			$("#count_vinculo").val(Math.random().toString(36).substring(9));
+			$("#vinculos_area").append($("#model_vinculo").clone().attr('id', 'item_vinculo').attr('sequencia', $("#count_vinculo").val()));
+						
+			$("#item_vinculo[sequencia='"+ $("#count_vinculo").val() +"'] [sequencia]").each(function() { $(this).attr('sequencia', $("#count_vinculo").val()); });
+
+			vinculo_form($(".form-vinculo[sequencia='"+ $("#count_vinculo").val() +"']"));			
+			vinculo_delete($(".btn-vinculo-delete[sequencia='"+ $("#count_vinculo").val() +"']"));
+			
+			$($(".form-vinculo-ato[sequencia='"+ $("#count_vinculo").val() +"']")).find("input").val("").attr('disabled', false);
+		}
+		else {
+			alert(msg[3]);
+		}
+	});
+	$(".btn-vinculo-delete[sequencia!='0']").each(function() { vinculo_delete($(this)); });
+	$(".form-vinculo[sequencia!='0']").each(function() { vinculo_form($(this)); });
+	
+	
+	/* Grupo de Informacao */	
+	$("#btn-gi-add").on('click', function() {
+		if($("#ato_id").val() != "") {
+			$("#count_gi").val(Math.random().toString(36).substring(6));
+			$("#gis_area").append($("#model_gi").clone().attr('id', 'item_gi').attr('sequencia', $("#count_gi").val()));
+			
+			$("#item_gi[sequencia='"+ $("#count_gi").val() +"'] [sequencia]").each(function() { $(this).attr('sequencia', $("#count_gi").val()); });
+
+			gi_form($(".form-gi[sequencia='"+ $("#count_gi").val() +"']"));			
+			gi_delete($(".btn-gi-delete[sequencia='"+ $("#count_gi").val() +"']"));			
+			atributo_gi_add($(".btn-atributo-gi-add[sequencia='"+ $("#count_gi").val() +"']"));
+			
+			$($(".form-gi[sequencia='"+ $("#count_gi").val() +"']")).find("input").val("").attr('disabled', false);
+		}
+		else {
+			alert(msg[3]);
+		}
+	});
+	$(".btn-gi-delete[sequencia!='0']").each(function() { gi_delete($(this)); });
+	$(".form-gi[sequencia!='0']").each(function() { gi_form($(this)); });
+	
+	$(".btn-atributo-gi-delete[sequencia!='0']").each(function() { atributo_gi_delete($(this)); });
+	$(".form-atributo-gi[sequencia!='0']").each(function() { atributo_gi_form($(this)); });
+	$(".btn-atributo-gi-add[sequencia!='0']").each(function() { atributo_gi_add($(this)); });
+});
+
+function atributo_ato_delete(obj) {
+	$(obj).on('click', function() {
+		if($("input[name='aat_id'][sequencia='"+ $(this).attr('sequencia') +"']").val() != "") {
+			$.ajax({
+				type: "POST",
+				url: '<?php echo $this->url(array('controller'=>'fontes', 'action'=>'atributo-ato-delete'),'default',true) ?>',
+				data: {'aat_id': $("input[name='aat_id'][sequencia='"+ $(this).attr('sequencia') +"']").val()},
+				success: function(html) {
+					if(html == 'error')
+						return false;
+				}
+			});
+		}
+		$("div[id='item_atributo'][sequencia='"+ $(this).attr('sequencia') +"']").remove();
+	});
+}
+
+function atributo_ato_form(obj) {
+	$(obj).validate({ 
+		submitHandler: function(form) {
+			$(form).ajaxSubmit({
+				data: {
+					'ato_id' : $("#ato_id").val()
+				},
+				success: function(html) {
+					if(html != "error") {
+						retorno = jQuery.parseJSON(html);
+						$("input[name='aat_id'][sequencia='"+ $(form).attr('sequencia') +"']").val(retorno.aat_id);
+
+						$(form).find(':input').each(function() { $(this).prop("disabled", true) });
+						
+						$("input[type='image'][sequencia='"+ $(form).attr('sequencia') +"']").hide();
+						$(".btn-atributo-ato-edit[sequencia='"+ $(form).attr('sequencia') +"']").show();				
+					}
+				}
+			});
+		},
+		errorPlacement: function(error, element) {}
+	});
+	
+}
+
+$(document).on('click', ".btn-atributo-ato-edit", function() {
+	$("input[name='aat_valor'][sequencia='"+ $(this).attr('sequencia') +"']").attr("disabled", false);
+	$("input[name='aat_metadata'][sequencia='"+ $(this).attr('sequencia') +"']").attr("disabled", false);
+	$("select[name='ttr_id'][sequencia='"+ $(this).attr('sequencia') +"']").attr("disabled", false);
+	$("input[type='image'][sequencia='"+ $(this).attr('sequencia') +"']").show();
+	$(".btn-atributo-ato-edit[sequencia='"+ $(this).attr('sequencia') +"']").hide();	
+});
+
+function vinculo_form(obj) {
+	$(obj).validate({
+		rules : {
+			gif_id_vinculante: { validGi: true },
+			gif_id_vinculado: { validGi: true }
+		},
+		submitHandler: function(form) {
+			$(form).ajaxSubmit({
+				data: {
+					'ato_id' : $("#ato_id").val()
+				},
+				success: function(html) {
+					if(html != "error") {
+						retorno = jQuery.parseJSON(html);
+						$("input[name='vnc_id'][sequencia='"+ $(form).attr('sequencia') +"']").val(retorno.vnc_id);
+
+						$(form).find(':input').each(function() { $(this).prop("disabled", true) });
+						
+						$("input[type='image'][sequencia='"+ $(form).attr('sequencia') +"']").hide();
+						$(".btn-vinculo-edit[sequencia='"+ $(form).attr('sequencia') +"']").show();				
+					}
+				}
+			});
+		},
+		errorPlacement: function(error, element) {}
+	});
+}
+
+function vinculo_delete(obj) {
+	$(obj).on('click', function() {
+		if($("input[name='vnc_id'][sequencia='"+ $(this).attr('sequencia') +"']").val() != "") {
+			$.ajax({
+				type: "POST",
+				url: '<?php echo $this->url(array('controller'=>'fontes', 'action'=>'vinculo-delete'),'default',true) ?>',
+				data: {'vnc_id': $("input[name='vnc_id'][sequencia='"+ $(this).attr('sequencia') +"']").val()},
+				success: function(html) {
+					if(html == 'error')
+						return false;
+				}
+			});
+		}
+		$("div[id='item_vinculo'][sequencia='"+ $(this).attr('sequencia') +"']").remove();
+	});
+}
+$(document).on('click', ".btn-vinculo-edit", function() {
+	$("form[sequencia='"+ $(this).attr('sequencia') +"']").find(':input').each(function() { $(this).prop("disabled", false) });
+	$("input[type='image'][sequencia='"+ $(this).attr('sequencia') +"']").show();
+	$(".btn-vinculo-edit[sequencia='"+ $(this).attr('sequencia') +"']").hide();	
+});
+
+function gi_delete(obj) {
+	$(obj).on('click', function() {
+		erro = 0;
+		seq = $(this).attr('sequencia');
+		if($("input[name='gif_id'][sequencia='"+ seq +"']").val() != "") {
+			$.ajax({
+				type: "POST",
+				url: '<?php echo $this->url(array('controller'=>'fontes', 'action'=>'gi-delete'),'default',true) ?>',
+				data: {'gif_id': $("input[name='gif_id'][sequencia='"+ seq +"']").val()},
+				success: function(html) {
+					if(html == 'error') {
+						alert(html);
+						return false;
+					}
+					else {
+						$("div[id='item_gi'][sequencia='"+ seq +"']").remove();
+					}
+				}
+			});
+		}
+		else
+		$("div[id='item_gi'][sequencia='"+ seq +"']").remove();
+	});
+}
+
+function gi_form(obj) {
+	$(obj).validate({ 
+		submitHandler: function(form) {
+			$(form).ajaxSubmit({
+				data: {
+					'ato_id' : $("#ato_id").val()
+				},
+				success: function(html) {
+					if(html != "error") {
+						retorno = jQuery.parseJSON(html);
+						$("input[name='gif_id'][sequencia='"+ $(form).attr('sequencia') +"']").val(retorno.gif_id);
+						$("select[name='tpf_id'][sequencia='"+ $(form).attr('sequencia') +"']").attr("disabled", true);
+						
+						$("input[type='image'][sequencia='"+ $(form).attr('sequencia') +"']").hide();
+						$(".btn-gi-edit[sequencia='"+ $(form).attr('sequencia') +"']").show();	
+						$(".btn-atributo-gi-add[sequencia='"+ $(form).attr('sequencia') +"']").show();				
+					}
+				}
+			});
+		},
+		errorPlacement: function(error, element) {}
+	});
+}
+
+$(document).on('click', ".btn-gi-edit", function() {
+	$("select[name='tpf_id'][sequencia='"+ $(this).attr('sequencia') +"']").attr("disabled", false);
+	$("input[type='image'][sequencia='"+ $(this).attr('sequencia') +"']").show();
+	$(".btn-gi-edit[sequencia='"+ $(this).attr('sequencia') +"']").hide();	
+});
+
+function atributo_gi_form(obj) {
+	$(obj).validate({ 
+		submitHandler: function(form) {
+			$(form).ajaxSubmit({
+				data: {
+					'gif_id' : $("input[name='gif_id'][sequencia='"+ $(obj).attr("gi") +"']").val()
+				},
+				success: function(html) {
+					if(html != "error") {
+						retorno = jQuery.parseJSON(html);
+						$("input[name='gia_id'][sequencia='"+ $(form).attr('sequencia') +"']").val(retorno.gia_id);
+						
+						$("input[name='gia_valor'][sequencia='"+ $(form).attr('sequencia') +"']").attr("disabled", true);
+						$("input[name='gia_metadata'][sequencia='"+ $(form).attr('sequencia') +"']").attr("disabled", true);
+						$("select[name='ttr_id'][sequencia='"+ $(form).attr('sequencia') +"']").attr("disabled", true);
+	
+						$("input[type='image'][sequencia='"+ $(form).attr('sequencia') +"']").hide();
+						$(".btn-atributo-gi-edit[sequencia='"+ $(form).attr('sequencia') +"']").show();
+					}
+				}
+			});
+		},
+		errorPlacement: function(error, element) {}
+	});
+}
+
+function atributo_gi_delete(obj) {
+	$(obj).on('click', function() {
+		if($("input[name='gia_id'][sequencia='"+ $(this).attr('sequencia') +"']").val() != "") {
+			$.ajax({
+				type: "POST",
+				url: '<?php echo $this->url(array('controller'=>'fontes', 'action'=>'atributo-gi-delete'),'default',true) ?>',
+				data: {'gia_id': $("input[name='gia_id'][sequencia='"+ $(this).attr('sequencia') +"']").val()},
+				success: function(html) {
+					if(html == 'error')
+						return false;
+				}
+			});
+		}
+		$("div[id='item_atributo_gi'][sequencia='"+ $(this).attr('sequencia') +"']").remove();
+	});
+}
+
+function atributo_gi_add(obj){
+	$(obj).on('click', function() {
+		if($("input[name='gif_id'][sequencia='" + $(this).attr("sequencia") +"']").val() != "") {
+			$("#count_atributo_gi").val(Math.random().toString(36).substring(7));
+			$(".atributos_gi_area[sequencia='"+ $(this).attr("sequencia") +"']").append($("#model_atributo_gi").clone().attr('id', 'item_atributo_gi').attr('sequencia', $("#count_atributo_gi").val()));
+			
+			
+			$("#item_atributo_gi[sequencia='"+ $("#count_atributo_gi").val() +"'] [sequencia]").each(function() { $(this).attr('sequencia', $("#count_atributo_gi").val()); });					
+			gi = $(this).attr("sequencia");
+			$("#item_atributo_gi[sequencia='"+ $("#count_atributo_gi").val() +"'] [gi]").each(function() { $(this).attr('gi', gi); });
+
+			atributo_gi_form($(".form-atributo-gi[sequencia='"+ $("#count_atributo_gi").val() +"']"));			
+			atributo_gi_delete($(".btn-atributo-gi-delete[sequencia='"+ $("#count_atributo_gi").val() +"']"));
+			
+			$($(".form-atributo-gi[sequencia='"+ $("#count_atributo_gi").val() +"']")).find("input[type='text']").val("").attr('disabled', false);
+		}				
+		else {
+			alert(msg[4]);
+		}
+	});
+}
+
+$(document).on('click', ".btn-atributo-gi-edit", function() {
+	$("input[name='gia_valor'][sequencia='"+ $(this).attr('sequencia') +"']").attr("disabled", false);
+	$("input[name='gia_metadata'][sequencia='"+ $(this).attr('sequencia') +"']").attr("disabled", false);
+	$("select[name='ttr_id'][sequencia='"+ $(this).attr('sequencia') +"']").attr("disabled", false);
+	$("input[type='image'][sequencia='"+ $(this).attr('sequencia') +"']").show();
+	$(".btn-atributo-gi-edit[sequencia='"+ $(this).attr('sequencia') +"']").hide();	
+});
+</script>
+
+<div id="ato">
+	<form method="POST" action="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'ato-save'),'default',true) ?>" id="form-ato">
+		<?php if(!isset($this->ato_id)) { ?>
+		<input type="hidden" id="ftn_id" value="<?php echo $this->ftn_id; ?>">
+		<?php } ?>
+		<input type="hidden" id="ato_id" value="<?php echo $this->ato_id; ?>">
+		
+		<div class="label">Referência</div>
+		<div class="info">
+			<input type="text" id="ato_referencia" value="<?php echo $this->ato['ato_referencia']; ?>" style="width: 448px;" required <?php if(isset($this->ato_id)) { ?> disabled <?php } ?>>
+		</div>
+		<div class="label">Tipo de Ato</div>
+		<div class="info">
+			<select id="tpa_id" style="width: 460px;" required <?php if(isset($this->ato_id)) { ?> disabled <?php } ?>>
+				<?php 
+				foreach($this->tipos_ato as $tipo) { 
+					$selected = ($tipo['tpa_id'] == $this->ato['tpa_id']) ? 'selected' : '';
+				?>
+					<option value="<?php echo $tipo['tpa_id']; ?>" <?php echo $selected; ?>><?php echo $tipo['tpa_nome']; ?></option>
+				<?php } ?>			
+			</select>
+		</div>
+		<div class="info2">
+			<a href="javascript:void(0)" id="btn-tipo-ato-save" <?php if(isset($this->ato_id)) { ?> style='display:none' <?php } ?>><img src="/img/icons/set1/save_16.png"></a>
+			<a href="javascript:void(0)" id="btn-tipo-ato-edit" <?php if(!isset($this->ato_id)) { ?> style='display:none' <?php } ?>><img src="/img/icons/set1/document_pencil_16.png"></a>
+		</div>
+	</form>
+
+	<div class="block" id="atributos">
+		<h6><a href="javascript:void(0)" id="btn-atributo-ato-add"><img src="/img/icons/set1/plus_16.png"> Atributos</a></h6>
+		
+		<div id="atributos_area">
+			<?php 
+			if(count($this->ato['atributos']) > 0) {
+				foreach($this->ato['atributos'] as $atributo) { 
+				$sequencia = substr(md5(rand(432,10000)), 3, 9);
+				?>
+				<div id="item_atributo" sequencia="<?php echo $sequencia; ?>" style="width: 100%; float:left">
+					<form method="POST" action="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'atributo-ato-save'),'default',true) ?>" class="form-atributo-ato" sequencia="<?php echo $sequencia; ?>">
+					<input type="hidden" name="aat_id" value="<?php echo $atributo->aat_id; ?>" sequencia="<?php echo $sequencia; ?>">
+					<input type="hidden" name="aat_tipo_dado" value="1" sequencia="<?php echo $sequencia; ?>">
+					<div class="label">
+						<a href="javascript:void(0)" class="btn-atributo-ato-delete" sequencia="<?php echo $sequencia; ?>"><img src="/img/icons/set1/delete_16.png"></a>
+						<select style="width: 170px" name="ttr_id" sequencia="<?php echo $sequencia; ?>" required disabled>
+							<?php foreach($this->tipos_atibuto as $tipo) { 
+							$selected = ($tipo['ttr_id'] == $atributo->ttr_id) ? 'selected' : '';?>
+							<option value="<?php echo $tipo["ttr_id"]; ?>" <?php echo $selected; ?>><?php echo $tipo["ttr_nome"]; ?></option>
+							<?php } ?>
+						</select>
+					</div>
+					<div class="info">
+						<input type="text" style="width: 415px" value="<?php echo $atributo->aat_valor; ?>" name="aat_valor" sequencia="<?php echo $sequencia; ?>" required disabled>
+					</div>
+					<div class="info2">
+						<input type="checkbox" sequencia="<?php echo $sequencia; ?>" value="1" name="aat_metadata" disabled <?php echo ($atributo->aat_metadata == 1) ? "checked" : ""; ?>> meta? &nbsp;&nbsp;
+						<input type="image" class="btn-atributo-ato-save" style='display:none' sequencia="<?php echo $sequencia; ?>" src="/img/icons/set1/save_16.png">
+						<a href="javascript:void(0)" class="btn-atributo-ato-edit" sequencia="<?php echo $sequencia; ?>"><img src="/img/icons/set1/document_pencil_16.png"></a>
+					</div>
+					</form>
+				</div>
+				<?php }
+			} ?>		
+		
+		</div>	
+	</div>
+	
+	<div class="block" id="grupos-informacao">
+		<h6><a href="javascript:void(0)" id="btn-gi-add"><img src="/img/icons/set1/plus_16.png"> Grupos de Informação</a></h6>
+			
+		<div id="gis_area">
+			<?php 
+			if(count($this->gis) > 0) {
+				foreach($this->gis as $gi) { 
+				$sequencia = substr(md5(rand(432,10000)), 3, 15);
+				?>
+		
+				<div id="item_gi" sequencia="<?php echo $sequencia; ?>">
+					<hr style="clear:both"/>
+					<form method="POST" action="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'gi-save'),'default',true) ?>" class="form-gi" sequencia="<?php echo $sequencia; ?>">
+					<div class="funcao" style="float:left; width:35%">
+						<a href="javascript:void(0)" class="btn-gi-delete" sequencia="<?php echo $sequencia; ?>"><img src="/img/icons/set1/delete_16.png"></a>
+						<input type="text" name="gif_id" value="<?php echo $gi->gif_id; ?>" sequencia="<?php echo $sequencia; ?>" readonly style="width:30px">
+						<select style="width: 140px" name="tpf_id" sequencia="<?php echo $sequencia; ?>" required disabled>
+							<?php foreach($this->tipos_funcao as $tipo) { 
+								$selected = ($gi->tpf_id == $tipo["tpf_id"]) ? "selected" : "";
+							?>
+							<option value="<?php echo $tipo["tpf_id"]; ?>" <?php echo $selected; ?>><?php echo $tipo["tpf_nome"]; ?></option>
+							<?php } ?>
+						</select>
+						<input type="image" class="btn-gi-save" style='display:none' sequencia="<?php echo $sequencia; ?>" src="/img/icons/set1/save_16.png">
+						<a href="javascript:void(0)" class="btn-gi-edit" sequencia="<?php echo $sequencia; ?>"><img src="/img/icons/set1/document_pencil_16.png"></a>
+						<a href="javascript:void(0)" class="btn-atributo-gi-add" sequencia="<?php echo $sequencia; ?>"><img src="/img/icons/set1/plus_16.png"></a>
+					</div>
+					</form>
+					<div class="atributos_gi_area" sequencia="<?php echo $sequencia; ?>" style="float:left; width:64%">
+					<?php 
+					if(count($gi->atributos) > 0) {
+						foreach($gi->atributos as $atributo) { 
+						$sequencia2 = substr(md5(rand(432,10000)), 3, 14);
+						?>
+						<div id="item_atributo_gi" sequencia="<?php echo $sequencia2; ?>" style="width: 100%; float:left">
+							<form method="POST" action="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'atributo-gi-save'),'default',true) ?>" class="form-atributo-gi" sequencia="<?php echo $sequencia2; ?>" gi="<?php echo $sequencia; ?>">
+							<input type="hidden" name="gia_id" value="<?php echo $atributo->gia_id; ?>" sequencia="<?php echo $sequencia2; ?>">
+							<input type="hidden" name="gia_tipo_dado" value="<?php echo $atributo->gia_tipo_dado; ?>" sequencia="<?php echo $sequencia2; ?>">
+							<div class="label">
+								<a href="javascript:void(0)" class="btn-atributo-gi-delete" sequencia="<?php echo $sequencia2; ?>"><img src="/img/icons/set1/delete_16.png"></a>
+								<select style="width: 100px" name="ttr_id" sequencia="<?php echo $sequencia2; ?>" required disabled>
+									<?php foreach($this->tipos_atibuto as $tipo) { 
+										$selected = ($atributo->ttr_id == $tipo["ttr_id"]) ? "selected" : "";
+									?>
+									<option value="<?php echo $tipo["ttr_id"]; ?>" <?php echo $selected; ?>><?php echo $tipo["ttr_nome"]; ?></option>
+									<?php } ?>
+								</select>
+							</div>
+							<div class="info">
+								<input type="text" style="width: 270px" name="gia_valor" value="<?php echo $atributo->gia_valor; ?>" disabled sequencia="<?php echo $sequencia2; ?>" required>
+							</div>
+							<div class="info2">
+								<input type="checkbox" sequencia="<?php echo $sequencia2; ?>" value="1" name="gia_metadata" disabled <?php echo ($atributo->gia_metadata == 1) ? "checked" : ""; ?>> mt? &nbsp;
+								<input type="image" style='display:none' class="btn-atributo-gi-save" sequencia="<?php echo $sequencia2; ?>" src="/img/icons/set1/save_16.png">
+								<a href="javascript:void(0)" class="btn-atributo-gi-edit" sequencia="<?php echo $sequencia2; ?>"><img src="/img/icons/set1/document_pencil_16.png"></a>
+							</div>
+							</form>
+						</div>
+						<?php }
+					} ?>		
+					
+					
+					</div>
+				</div>
+				<?php }
+			} ?>
+		</div>
+		
+	</div>
+	
+	<div class="block" id="vinculos">
+		<h6><a href="javascript:void(0)" id="btn-vinculo-add"><img src="/img/icons/set1/plus_16.png"> Vínculos</a></h6>
+		
+		<div id="vinculos_area">
+			<?php 
+			if(count($this->vinculos) > 0) {
+				foreach($this->vinculos as $vinculo) { 
+				$sequencia = substr(md5(rand(432,10000)), 3, 9);				?>
+				
+				<div id="item_vinculo" sequencia="<?php echo $sequencia; ?>">
+					<form method="POST" action="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'vinculo-save'),'default',true) ?>" class="form-vinculo" sequencia="<?php echo $sequencia; ?>">
+					<input type="hidden" name="vnc_id" sequencia="<?php echo $sequencia; ?>" value="<?php echo $vinculo->vnc_id; ?>">
+					
+					<div class="info" sequencia="<?php echo $sequencia; ?>">
+						<a href="javascript:void(0)" class="btn-vinculo-delete" sequencia="<?php echo $sequencia; ?>"><img src="/img/icons/set1/delete_16.png"></a>
+						
+						<input type="text" name="gif_id_vinculante" sequencia="<?php echo $sequencia; ?>" style="width:30px" value="<?php echo $vinculo->gif_id_vinculante; ?>" disabled required >
+						
+						<select style="width: 250px" name="tpv_id" sequencia="<?php echo $sequencia; ?>" required disabled>
+							<option value=""></value>
+							<?php foreach($this->tipos_vinculo as $tipo) { 
+							$selected = ($tipo["tpv_id"] ==  $vinculo->tpv_id) ? "selected" : "";
+							?>
+							<option value="<?php echo $tipo["tpv_id"]; ?>" <?php echo $selected; ?>><?php echo $tipo["tpv_descritivo"]; ?></option>
+							<?php } ?>
+						</select>
+						
+						<input type="text" name="gif_id_vinculado" sequencia="<?php echo $sequencia; ?>" style="width:30px"  value="<?php echo $vinculo->gif_id_vinculado; ?>" disabled required>
+						
+						<input type="image" class="btn-vinculo-save" style='display:none' sequencia="<?php echo $sequencia; ?>" src="/img/icons/set1/save_16.png">
+						<a href="javascript:void(0)" class="btn-vinculo-edit" sequencia="<?php echo $sequencia; ?>"><img src="/img/icons/set1/document_pencil_16.png"></a>
+					</div>
+					</form>
+				</div>
+				
+			<?php }
+			} ?>
+		</div>
+	</div>
+</div>
+
+<div id="model" style="display:none">
+	<input type="hidden" id="count_atributo" value="1">
+	<div id="model_atributo" sequencia="0" style="width: 100%; float:left">
+		<form method="POST" action="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'atributo-ato-save'),'default',true) ?>" class="form-atributo-ato" sequencia="0">
+		<input type="hidden" name="aat_id" value="" sequencia="0">
+		<input type="hidden" name="aat_tipo_dado" value="1" sequencia="0">
+		<div class="label">
+			<a href="javascript:void(0)" class="btn-atributo-ato-delete" sequencia="0"><img src="/img/icons/set1/delete_16.png"></a>
+			<select style="width: 170px" name="ttr_id" sequencia="0" required>
+				<?php foreach($this->tipos_atibuto as $tipo) { ?>
+				<option value="<?php echo $tipo["ttr_id"]; ?>"><?php echo $tipo["ttr_nome"]; ?></option>
+				<?php } ?>
+			</select>
+		</div>
+		<div class="info">
+			<input type="text" style="width: 415px" name="aat_valor" sequencia="0" required>
+		</div>
+		<div class="info2">
+			<input type="checkbox" sequencia="0" value="1" name="aat_metadata"> meta? &nbsp;&nbsp;
+			<input type="image" class="btn-atributo-ato-save" sequencia="0" src="/img/icons/set1/save_16.png">
+			<a href="javascript:void(0)" class="btn-atributo-ato-edit" style='display:none' sequencia="0"><img src="/img/icons/set1/document_pencil_16.png"></a>
+		</div>
+		</form>
+	</div>
+	
+	<input type="hidden" id="count_gi" value="1">
+	<div id="model_gi" sequencia="0">
+		<hr style="clear:both"/>
+		<form method="POST" action="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'gi-save'),'default',true) ?>" class="form-gi" sequencia="0">
+		<div class="funcao" style="float:left; width:35%">
+			<a href="javascript:void(0)" class="btn-gi-delete" sequencia="0"><img src="/img/icons/set1/delete_16.png"></a>
+			<input type="text" name="gif_id" value="" sequencia="0" readonly style="width:30px">
+			<select style="width: 140px" name="tpf_id" sequencia="0" required>
+				<?php foreach($this->tipos_funcao as $tipo) { ?>
+				<option value="<?php echo $tipo["tpf_id"]; ?>"><?php echo $tipo["tpf_nome"]; ?></option>
+				<?php } ?>
+			</select>
+			<input type="image" class="btn-gi-save" sequencia="0" src="/img/icons/set1/save_16.png">
+			<a href="javascript:void(0)" class="btn-gi-edit" style='display:none' sequencia="0"><img src="/img/icons/set1/document_pencil_16.png"></a>
+			<a href="javascript:void(0)" class="btn-atributo-gi-add" style='display:none' sequencia="0"><img src="/img/icons/set1/plus_16.png"></a>
+		</div>
+		</form>
+		<div class="atributos_gi_area" sequencia="0" style="float:left; width:64%">
+		</div>
+	</div>
+	
+	<input type="hidden" id="count_atributo_gi" value="1">
+	<div id="model_atributo_gi" sequencia="0" style="width: 100%; float:left">
+		<form method="POST" action="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'atributo-gi-save'),'default',true) ?>" class="form-atributo-gi" sequencia="0" gi="0">
+		<input type="hidden" name="gia_id" value="" sequencia="0">
+		<input type="hidden" name="gia_tipo_dado" value="1" sequencia="0">
+		<div class="label">
+			<a href="javascript:void(0)" class="btn-atributo-gi-delete" sequencia="0"><img src="/img/icons/set1/delete_16.png"></a>
+			<select style="width: 100px" name="ttr_id" sequencia="0" required>
+				<?php foreach($this->tipos_atibuto as $tipo) { ?>
+				<option value="<?php echo $tipo["ttr_id"]; ?>"><?php echo $tipo["ttr_nome"]; ?></option>
+				<?php } ?>
+			</select>
+		</div>
+		<div class="info">
+			<input type="text" style="width: 270px" name="gia_valor" sequencia="0" required>
+		</div>
+		<div class="info2">
+			<input type="checkbox" sequencia="0" value="1" name="gia_metadata"> mt? &nbsp;
+			<input type="image" class="btn-atributo-gi-save" sequencia="0" src="/img/icons/set1/save_16.png">
+			<a href="javascript:void(0)" class="btn-atributo-gi-edit" style='display:none' sequencia="0"><img src="/img/icons/set1/document_pencil_16.png"></a>
+		</div>
+		</form>
+	</div>
+	
+	
+	<input type="hidden" id="count_vinculo" value="1">
+	<div id="model_vinculo" sequencia="0">
+		<form method="POST" action="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'vinculo-save'),'default',true) ?>" class="form-vinculo" sequencia="0">
+		<input type="hidden" name="vnc_id" sequencia="0">
+		
+		<div class="info" sequencia="0">
+			<a href="javascript:void(0)" class="btn-vinculo-delete" sequencia="0"><img src="/img/icons/set1/delete_16.png"></a>
+			
+			<input type="text" name="gif_id_vinculante" value="" sequencia="0" style="width:30px" required>
+			
+			<select style="width: 250px" name="tpv_id" sequencia="0" required>
+				<option value=""></value>
+				<?php foreach($this->tipos_vinculo as $tipo) { ?>
+				<option value="<?php echo $tipo["tpv_id"]; ?>"><?php echo $tipo["tpv_descritivo"]; ?></option>
+				<?php } ?>
+			</select>
+			
+			<input type="text" name="gif_id_vinculado" value="" sequencia="0" style="width:30px" required>
+			
+			<input type="image" class="btn-vinculo-save" sequencia="0" src="/img/icons/set1/save_16.png">
+			<a href="javascript:void(0)" class="btn-vinculo-edit" style='display:none' sequencia="0"><img src="/img/icons/set1/document_pencil_16.png"></a>
+		</div>
+		</form>
+	</div>
+</div>

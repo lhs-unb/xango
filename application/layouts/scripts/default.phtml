@@ -1,0 +1,87 @@
+<?php echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Xango</title>
+	
+	<?php echo $this->headLink()->appendStylesheet('/css/global.css') ?>
+	<?php echo $this->headLink()->appendStylesheet('/css/featherlight.min.css') ?>
+	
+	<?php $this->headScript()->appendFile('/js/jquery-1.11.1.min.js','text/javascript'); ?>
+	<?php $this->headScript()->appendFile('/js/haddock.js','text/javascript'); ?>
+	<?php $this->headScript()->appendFile('/js/jquery.form.min.js','text/javascript'); ?>
+	<?php $this->headScript()->appendFile('/js/stupidtable.min.js','text/javascript'); ?>
+	<?php $this->headScript()->appendFile('/js/jquery.validate.min.js','text/javascript'); ?>
+	<?php $this->headScript()->appendFile('/js/featherlight.min.js','text/javascript'); ?>
+	
+	<?php echo $this->headScript(); ?>
+	<?php echo $this->headMeta(); ?>
+	<?php echo $this->headLink(); ?>	
+</head>
+<body>
+	<div id="wrap">
+		<div id="header">
+			<h1><img src="/img/oxe.png"> Xango
+			<div style="float: right">
+				<a href="<?php echo $this->url(array('controller'=>'login', 'action'=>'logout'),'default',true) ?>"><img src="/img/icons/logout.png" width="20"></a>
+			</div>
+			</h1>
+		</div>
+
+		<div id="sidebar">
+		
+			<p>Selecione o módulo e a funcionalidade no menu abaixo:</p>
+				
+			<div id="menu">
+				<div class="item-menu">Pessoal</div>
+				<div class="menu-container">
+					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'index'),'default',true); ?>">Painel</a></div>
+					<div class="item-submenu">Perfil</div>
+					<div class="item-submenu">Mensagens</div>
+					<div class="item-submenu">Anotações</div>
+					<div class="item-submenu">Pastas de Pesquisa</div>
+				</div>
+				
+				<div class="item-menu">Administração</div>
+				<div class="menu-container">
+					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'grupos-trabalho'),'default',true); ?>">Grupos de Trabalho</a></div>
+					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'usuarios'),'default',true); ?>">Usuários</a></div>
+					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'acervos'),'default',true); ?>">Acervos</a></div>
+				</div>
+				
+				<div class="item-menu">Fontes</div>
+				<div class="menu-container">
+					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'fontes'),'default',true); ?>">Fontes</a></div>
+					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'tipos-ato'),'default',true); ?>">Tipos de Ato</a></div>
+					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'tipos-atributo'),'default',true); ?>">Tipos de Atributo</a></div>
+					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'tipos-vinculo'),'default',true); ?>">Tipos de Vínculo</a></div>
+					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'tipos-funcao'),'default',true); ?>">Tipos de Função</a></div>
+				</div>
+				
+				<div class="item-menu ultimo">Tipologias</div>
+				<div class="menu-container">
+					<div class="item-submenu">Pre-definições</div>
+				</div>
+			</div>
+		</div>
+		
+		<div id="main">
+		
+			<div style="float: right; margin-right: 30px;">
+				<progress max="<?php echo (int)$this->parameters['base_exp']*pow((int)$this->user->usu_level,(int)$this->parameters['factor_exp']); ?>" value="<?php echo $this->user->usu_score; ?>"></progress> <?php echo $this->user->usu_score; ?> /  <?php echo (int)$this->parameters['base_exp']*pow((int)$this->user->usu_level,(int)$this->parameters['factor_exp']); ?> - Level <?php echo $this->user->usu_level; ?>
+			</div>
+			
+			
+			<?php if(isset($this->system_message)) {				
+				echo "<div id='system_msg_box' class='type". $this->system_message['type'] ."'>". $this->system_message['msg'] ."</div>";
+			}
+			?>
+			<h2><?php echo $this->title; ?></h2>
+			<?php echo $this->layout()->content ?>
+		</div>
+		
+		<code><?php echo $this->inlineScript(); ?></code>
+		
+	</div>
+</body>
+</html>
