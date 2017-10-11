@@ -4,15 +4,15 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Xango</title>
 	
-	<?php echo $this->headLink()->appendStylesheet('/css/global.css') ?>
-	<?php echo $this->headLink()->appendStylesheet('/css/featherlight.min.css') ?>
+	<?php echo $this->headLink()->appendStylesheet($_SERVER["CONTEXT_PREFIX"] .'/css/global.css') ?>
+	<?php echo $this->headLink()->appendStylesheet($_SERVER["CONTEXT_PREFIX"] .'/css/featherlight.min.css') ?>
 	
-	<?php $this->headScript()->appendFile('/js/jquery-1.11.1.min.js','text/javascript'); ?>
-	<?php $this->headScript()->appendFile('/js/haddock.js','text/javascript'); ?>
-	<?php $this->headScript()->appendFile('/js/jquery.form.min.js','text/javascript'); ?>
-	<?php $this->headScript()->appendFile('/js/stupidtable.min.js','text/javascript'); ?>
-	<?php $this->headScript()->appendFile('/js/jquery.validate.min.js','text/javascript'); ?>
-	<?php $this->headScript()->appendFile('/js/featherlight.min.js','text/javascript'); ?>
+	<?php $this->headScript()->appendFile($_SERVER["CONTEXT_PREFIX"] .'/js/jquery-1.11.1.min.js','text/javascript'); ?>
+	<?php $this->headScript()->appendFile($_SERVER["CONTEXT_PREFIX"] .'/js/haddock.js','text/javascript'); ?>
+	<?php $this->headScript()->appendFile($_SERVER["CONTEXT_PREFIX"] .'/js/jquery.form.min.js','text/javascript'); ?>
+	<?php $this->headScript()->appendFile($_SERVER["CONTEXT_PREFIX"] .'/js/stupidtable.min.js','text/javascript'); ?>
+	<?php $this->headScript()->appendFile($_SERVER["CONTEXT_PREFIX"] .'/js/jquery.validate.min.js','text/javascript'); ?>
+	<?php $this->headScript()->appendFile($_SERVER["CONTEXT_PREFIX"] .'/js/featherlight.min.js','text/javascript'); ?>
 	
 	<?php echo $this->headScript(); ?>
 	<?php echo $this->headMeta(); ?>

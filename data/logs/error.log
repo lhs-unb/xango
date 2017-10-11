@@ -3598,3 +3598,360 @@ Zend_View_Helper_: Zend/View/Helper/;C:/www/xango2/application/modules/default/v
   'action' => 'index',
   'module' => 'default',
 )
+2017-10-10T19:32:52+01:00 CRIT (2): Application error
+2017-10-10T19:32:52+01:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ato_id' in 'where clause'
+2017-10-10T19:32:52+01:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_vin...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(97): Zend_Db_Table_Abstract->fetchAll('ato_id = 356')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->atoEditAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('atoEditAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-10T19:32:52+01:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'ato-edit',
+  'ato_id' => '356',
+  'module' => 'default',
+)
+2017-10-10T19:32:54+01:00 CRIT (2): Application error
+2017-10-10T19:32:54+01:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ato_id' in 'where clause'
+2017-10-10T19:32:54+01:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_vin...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(97): Zend_Db_Table_Abstract->fetchAll('ato_id = 356')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->atoEditAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('atoEditAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-10T19:32:54+01:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'ato-edit',
+  'ato_id' => '356',
+  'module' => 'default',
+)
+2017-10-10T19:32:55+01:00 CRIT (2): Application error
+2017-10-10T19:32:55+01:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ato_id' in 'where clause'
+2017-10-10T19:32:55+01:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_vin...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(97): Zend_Db_Table_Abstract->fetchAll('ato_id = 356')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->atoEditAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('atoEditAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-10T19:32:55+01:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'ato-edit',
+  'ato_id' => '356',
+  'module' => 'default',
+)
+2017-10-10T19:33:02+01:00 CRIT (2): Application error
+2017-10-10T19:33:02+01:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ato_id' in 'where clause'
+2017-10-10T19:33:02+01:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_vin...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(97): Zend_Db_Table_Abstract->fetchAll('ato_id = 386')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->atoEditAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('atoEditAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-10T19:33:02+01:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'ato-edit',
+  'ato_id' => '386',
+  'module' => 'default',
+)
+2017-10-10T19:33:03+01:00 CRIT (2): Application error
+2017-10-10T19:33:03+01:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ato_id' in 'where clause'
+2017-10-10T19:33:03+01:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_vin...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(97): Zend_Db_Table_Abstract->fetchAll('ato_id = 386')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->atoEditAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('atoEditAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-10T19:33:03+01:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'ato-edit',
+  'ato_id' => '386',
+  'module' => 'default',
+)
+2017-10-10T19:33:03+01:00 CRIT (2): Application error
+2017-10-10T19:33:03+01:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ato_id' in 'where clause'
+2017-10-10T19:33:03+01:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_vin...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(97): Zend_Db_Table_Abstract->fetchAll('ato_id = 386')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->atoEditAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('atoEditAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-10T19:33:03+01:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'ato-edit',
+  'ato_id' => '386',
+  'module' => 'default',
+)
+2017-10-10T19:33:04+01:00 CRIT (2): Application error
+2017-10-10T19:33:04+01:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ato_id' in 'where clause'
+2017-10-10T19:33:04+01:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_vin...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(97): Zend_Db_Table_Abstract->fetchAll('ato_id = 386')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->atoEditAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('atoEditAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-10T19:33:04+01:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'ato-edit',
+  'ato_id' => '386',
+  'module' => 'default',
+)
+2017-10-10T19:33:06+01:00 CRIT (2): Application error
+2017-10-10T19:33:06+01:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ato_id' in 'where clause'
+2017-10-10T19:33:06+01:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_vin...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(97): Zend_Db_Table_Abstract->fetchAll('ato_id = 386')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->atoEditAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('atoEditAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-10T19:33:06+01:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'ato-edit',
+  'ato_id' => '386',
+  'module' => 'default',
+)
+2017-10-10T19:40:23+01:00 CRIT (2): Application error
+2017-10-10T19:40:23+01:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ato_id' in 'where clause'
+2017-10-10T19:40:23+01:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_vin...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(97): Zend_Db_Table_Abstract->fetchAll('ato_id = 380')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->atoEditAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('atoEditAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-10T19:40:23+01:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'ato-edit',
+  'ato_id' => '380',
+  'module' => 'default',
+)
+2017-10-10T19:40:24+01:00 CRIT (2): Application error
+2017-10-10T19:40:24+01:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ato_id' in 'where clause'
+2017-10-10T19:40:24+01:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_vin...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(97): Zend_Db_Table_Abstract->fetchAll('ato_id = 380')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->atoEditAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('atoEditAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-10T19:40:24+01:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'ato-edit',
+  'ato_id' => '380',
+  'module' => 'default',
+)
+2017-10-10T19:40:25+01:00 CRIT (2): Application error
+2017-10-10T19:40:25+01:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ato_id' in 'where clause'
+2017-10-10T19:40:25+01:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_vin...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(97): Zend_Db_Table_Abstract->fetchAll('ato_id = 381')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->atoEditAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('atoEditAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-10T19:40:25+01:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'ato-edit',
+  'ato_id' => '381',
+  'module' => 'default',
+)
+2017-10-10T19:40:26+01:00 CRIT (2): Application error
+2017-10-10T19:40:26+01:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ato_id' in 'where clause'
+2017-10-10T19:40:26+01:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_vin...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(97): Zend_Db_Table_Abstract->fetchAll('ato_id = 381')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->atoEditAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('atoEditAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-10T19:40:26+01:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'ato-edit',
+  'ato_id' => '381',
+  'module' => 'default',
+)
+2017-10-11T18:26:20+01:00 CRIT (2): Application error
+2017-10-11T18:26:20+01:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ato_id' in 'where clause'
+2017-10-11T18:26:20+01:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_vin...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(97): Zend_Db_Table_Abstract->fetchAll('ato_id = 543')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->atoEditAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('atoEditAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-11T18:26:20+01:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'ato-edit',
+  'ato_id' => '543',
+  'module' => 'default',
+)
+2017-10-11T18:27:01+01:00 CRIT (2): Application error
+2017-10-11T18:27:01+01:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ato_id' in 'where clause'
+2017-10-11T18:27:01+01:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_vin...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(97): Zend_Db_Table_Abstract->fetchAll('ato_id = 22')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->atoEditAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('atoEditAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-11T18:27:01+01:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'ato-edit',
+  'ato_id' => '22',
+  'module' => 'default',
+)
+2017-10-11T18:27:05+01:00 CRIT (2): Application error
+2017-10-11T18:27:05+01:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ato_id' in 'where clause'
+2017-10-11T18:27:05+01:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_vin...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(97): Zend_Db_Table_Abstract->fetchAll('ato_id = 24')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->atoEditAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('atoEditAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-11T18:27:05+01:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'ato-edit',
+  'ato_id' => '24',
+  'module' => 'default',
+)
+2017-10-11T18:27:08+01:00 CRIT (2): Application error
+2017-10-11T18:27:08+01:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ato_id' in 'where clause'
+2017-10-11T18:27:08+01:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_vin...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(97): Zend_Db_Table_Abstract->fetchAll('ato_id = 45')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->atoEditAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('atoEditAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-11T18:27:08+01:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'ato-edit',
+  'ato_id' => '45',
+  'module' => 'default',
+)
+2017-10-11T18:27:14+01:00 CRIT (2): Application error
+2017-10-11T18:27:14+01:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ato_id' in 'where clause'
+2017-10-11T18:27:14+01:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_vin...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(97): Zend_Db_Table_Abstract->fetchAll('ato_id = 45')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->atoEditAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('atoEditAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-11T18:27:14+01:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'ato-edit',
+  'ato_id' => '45',
+  'module' => 'default',
+)

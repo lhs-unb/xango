@@ -86,7 +86,7 @@ class FontesController extends Xango_AbstractController {
 		if($ato_id = $this->getRequest()->getParam("ato_id"))
 			$this->view->ato_id = $ato_id;
 		
-		$this->view->tipos_ato = $this->objTipoAto->fetchAll(null, "tpa_nome");	
+		$this->view->tipos_ato = $this->objTipoAto->fetchAll(null, "tpa_nome");
 		$this->view->tipos_atibuto = $this->objTipoAtributo->fetchAll(null, "ttr_nome");
 		$this->view->tipos_funcao = $this->objTipoFuncao->fetchAll(null, "tpf_nome");
 		$this->view->tipos_vinculo = $this->objTipoVinculo->fetchAll(null, "tpv_nome");
@@ -94,7 +94,7 @@ class FontesController extends Xango_AbstractController {
 		if($id = $this->getRequest()->getParam("ato_id")) {
 			$this->view->ato = $this->objAto->getAtoFull($id);
 			$this->view->gis = $this->objGrupoInformacao->getGrupoInformacaoFull($id);
-			$this->view->vinculos = $this->objVinculo->fetchAll("ato_id = ". $id);
+			$this->view->vinculos = $this->objVinculo->getVinculos($id);
 		}
 	}
 	
