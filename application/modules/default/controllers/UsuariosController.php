@@ -26,14 +26,17 @@ class UsuariosController extends Xango_AbstractController {
 			$this->db->getProfiler()->setEnabled(true);
 			$profiler = $this->db->getProfiler();
 			*/
-
+			// pega os dados do usuário
+			$usuario = $this->user;
+            // verifica se a senha enviada para atulizar é diferente de null, caso contrário retira do array de update
 			if($data["usu_senha"] != null )
 				$data["usu_senha"] = md5($data["usu_senha"]);
 			else
 			    unset($data["usu_senha"]);
 			if(empty($data["usu_admin"]))
 				$data["usu_admin"] = 0;
-			if(empty($data["usu_ativo"]))
+			// verifica se o usuário está desativando alguém que não seja ele mesmo, caso contrário permanece usu_ativo = 1
+			if(empty($data["usu_ativo"]) && $data["usu_id"] != $usuario->usu_id )
 				$data["usu_ativo"] = 0;
 
 			$this->db->beginTransaction();
