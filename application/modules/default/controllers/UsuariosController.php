@@ -1,5 +1,4 @@
 <?php
-/* modificado por Luiz, atualizado no git 17/10 */
 class UsuariosController extends Xango_AbstractController {
 
     public function init() {
