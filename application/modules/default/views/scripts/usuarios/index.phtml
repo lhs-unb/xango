@@ -1,3 +1,8 @@
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <div class="div-botoes">
 	<a class="btn" href="<?php echo $this->url(array('controller'=>'usuarios', 'action'=>'edit'),'default',true) ?>" lightbox="true">
 		<img src="/img/icons/set1/plus_16.png"> Novo
@@ -27,8 +32,10 @@
 			<td><?php echo ($usuario->usu_admin == 1) ? 'X' : ""; ?></td>
 			<td class="actions">
 				<a href="<?php echo $this->url(array('controller'=>'usuarios', 'action'=>'edit', 'id'=>$usuario->usu_id),'default',true) ?>" lightbox="true"><img src="/img/icons/set1/document_pencil_16.png"></a>
-				<!-- desabilitada a exclusão <a href="<?php //echo $this->url(array('controller'=>'usuarios', 'action'=>'delete', 'id'=>$usuario->usu_id),'default',true) ?>" delete="true"><img src="/img/icons/set1/delete_16.png"></a>-->
-			</td>
+                <a href ="<?php echo $this->url(array('controller'=>'usuarios', 'action'=>'group', 'id'=>$usuario->usu_id, 'nome'=>$usuario->usu_nome),'default',true) ?>" lightbox="true"><i class="fa fa-group" style="color:#533f25"></i></a>
+                <!-- desabilitada a exclusão <a href="<?php //echo $this->url(array('controller'=>'usuarios', 'action'=>'delete', 'id'=>$usuario->usu_id),'default',true) ?>" delete="true"><img src="/img/icons/set1/delete_16.png"></a>-->
+
+            </td>
 		</tr>
 		<?php } ?>
 	</tbody>

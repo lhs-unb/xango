@@ -6,6 +6,7 @@ class UsuariosController extends Xango_AbstractController {
 
 		parent::init();
         $this->objUsuario = new Xango_Model_Usuario();
+        $this->objGroup = new Xango_Model_GrupoTrabalho();
 		$this->view->title = 'Usuários';
 	}
 
@@ -18,6 +19,28 @@ class UsuariosController extends Xango_AbstractController {
 			$this->view->usuario = $this->objUsuario->fetchRowById($id)->toArray();
 		}
 	}
+	function groupAction() {
+        $this->lightbox();
+        $id = $this->getRequest()->getParam("id");
+        $nome = $this->getRequest()->getParam("nome");
+
+        $data = $this->objGroup->usuGrupoTrabalho($id);
+
+        $group = $this->objGroup->selectGroupoTrabalho();
+        $dataView = [
+            'nome' => $nome,
+            'dados' => $data,
+            'grupo' => $group
+        ];
+        $this->view->usuario = $dataView;
+    }
+    function saveGroupAction(){
+        if($this->getRequest()->isPost()){
+            $data = $this->getRequest()->getPost();
+            print_r($data);
+            die();
+        }
+    }
 	
 	function saveAction() {
 		if($this->getRequest()->isPost()) {

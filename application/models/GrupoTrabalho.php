@@ -19,9 +19,21 @@ class Xango_Model_GrupoTrabalho extends Xango_AbstractModel {
 							ON augt.usu_id = usu.usu_id
 						WHERE augt.gtr_id = ". $result['gtr_id']."
 						ORDER BY augt.aug_papel, usu.usu_nome";
-			$membros = $this->db->fetchAll($sql);	
+			$membros = $this->db->fetchAll($sql);
 			$results[$key]['gtr_membros'] = ($membros) ? $membros : array();
 		}
 		return $results;
 	}
+	public function usuGrupoTrabalho($id){
+	    $sql = "SELECT  gtr.gtr_nome, gtr.gtr_descricao, augt.aug_papel, gtr.gtr_id
+                FROM tbl_assoc_usuario_grupo_trabalho augt INNER JOIN tbl_grupos_trabalho gtr
+                ON augt.gtr_id = gtr.gtr_id WHERE augt.usu_id = ".$id;
+        $result = $this->db->fetchAll($sql);
+        return $result;
+    }
+    public function selectGroupoTrabalho(){
+	    $sql = "SELECT * FROM tbl_grupos_trabalho ORDER BY gtr_nome";
+	    $result = $this->db->fetchAll($sql);
+	    return $result;
+    }
 }
