@@ -1,6 +1,7 @@
 <form  action="<?php echo $this->url(array('controller'=>'usuarios', 'action'=>'save-group'),'default',true); ?>" method="POST">
     <fieldset class="form-edit">
         <legend>Grupos do usuário - <?php print_r($this->usuario['nome']); ?></legend>
+            <input type="hidden" name="id" value="<?php print_r($this->usuario['id']);?>" >
             <div class="form-group">
                 <div class="row" >
                     <div class="col-xs-6">
@@ -11,32 +12,71 @@
                             </thead>
                             <?php
                                 if(!empty($this->usuario['dados'])){
+                                    $arrayChecked[] = null;
+                                    foreach($this->usuario['grupo'] as $grupo){
+                                        foreach($this->usuario['dados'] as $dados){
+                                            if($dados->gtr_id == $grupo->gtr_id){
+                                                $arrayChecked[$dados->gtr_id] = $dados->aug_papel;
+                                            }
+                                        }
+                                    }
                                     foreach($this->usuario['grupo'] as $grupo) {
-                                        foreach ($this->usuario['dados'] as $dados) {
+                                        if (array_key_exists($grupo->gtr_id, $arrayChecked)) {
+                                            echo "<tr><td><input type='checkbox' name='$grupo->gtr_nome' id='$grupo->gtr_id' value='$grupo->gtr_id'checked>" . $grupo->gtr_nome . "<td/>";
+                                            if ($arrayChecked[$grupo->gtr_id] == 1) {
+                                                echo "<td><select name='$grupo->gtr_id' id='$grupo->gtr_id' >
+                                                        <option value='lider' selected>Líder</option>
+                                                        <option value='monitor'>Monitor</option>
+                                                        <option value='operador'>Operador</option>
+                                                        </select></td></tr>";
+                                            } else if ($arrayChecked[$grupo->gtr_id] == 2) {
+                                                echo "<td><select name='$grupo->gtr_id' id='$grupo->gtr_id'>
+                                                        <option value='lider'>Líder</option>
+                                                        <option value='monitor'selected>Monitor</option>
+                                                        <option value='operador'>Operador</option>
+                                                        </select></td></tr>";
+                                            } else if ($arrayChecked[$grupo->gtr_id] == 3) {
+                                                echo "<td><select name='$grupo->gtr_id' id='$grupo->gtr_id' >
+                                                        <option value='lider'>Líder</option>
+                                                        <option value='monitor'>Monitor</option>
+                                                        <option value='operador'selected>Operador</option>
+                                                        </select></td></tr>";
+                                            }
+                                        } else {
+                                            echo "<tr><td><input type='checkbox' name='$grupo->gtr_nome' id='$grupo->gtr_id' value='$grupo->gtr_id'>" . $grupo->gtr_nome . "<td/>";
+                                            echo "<td><select name='$grupo->gtr_id' id='$grupo->gtr_id' >
+                                                        <option value='lider'>Líder</option>
+                                                        <option value='monitor'>Monitor</option>
+                                                        <option value='operador'>Operador</option>
+                                                        </select></td></tr>";
+                                        }
+                                    }
+                                        /*
+                                        foreach($this->usuario['dados'] as $dados){
                                             if ($dados->gtr_id == $grupo->gtr_id) {
-                                                echo "<tr><td><input type='checkbox' name='gtr_nome' id='$grupo->gtr_id' value='$grupo->gtr_nome'checked>" . $grupo->gtr_nome . "<td/>";
+                                                echo "<tr><td><input type='checkbox' name='$grupo->gtr_nome' id='$grupo->gtr_id' value='$grupo->gtr_id'checked>" . $grupo->gtr_nome . "<td/>";
                                                 if ($dados->aug_papel == 1) {
-                                                    echo "<td><select name='aug_papel' id='$grupo->gtr_id' >
-                                                        <option value='1' selected>Líder</option>
-                                                        <option value='2'>Monitor</option>
-                                                        <option value='3'>Operador</option>
+                                                    echo "<td><select name='$grupo->gtr_id' id='$grupo->gtr_id' >
+                                                        <option value='lider' selected>Líder</option>
+                                                        <option value='monitor'>Monitor</option>
+                                                        <option value='operador'>Operador</option>
                                                         </select></td></tr>";
                                                 } else if ($dados->aug_papel == 2) {
-                                                    echo "<td><select name='aug_papel' id='$grupo->gtr_id'>
-                                                        <option value='1'>Líder</option>
-                                                        <option value='2'selected>Monitor</option>
-                                                        <option value='3'>Operador</option>
+                                                    echo "<td><select name='$grupo->gtr_id' id='$grupo->gtr_id'>
+                                                        <option value='lider'>Líder</option>
+                                                        <option value='monitor'selected>Monitor</option>
+                                                        <option value='operador'>Operador</option>
                                                         </select></td></tr>";
                                                 } else if ($dados->aug_papel == 3) {
-                                                    echo "<td><select name='aug_papel' id='$grupo->gtr_id' >
-                                                        <option value='1'>Líder</option>
-                                                        <option value='2'>Monitor</option>
-                                                        <option value='3'selected>Operador</option>
+                                                    echo "<td><select name='$grupo->gtr_id' id='$grupo->gtr_id' >
+                                                        <option value='lider'>Líder</option>
+                                                        <option value='monitor'>Monitor</option>
+                                                        <option value='operador'selected>Operador</option>
                                                         </select></td></tr>";
                                                 }
                                             }else{
-                                                echo "<tr><td><input type='checkbox' name='gtr_nome' id='$grupo->gtr_id' value='$grupo->gtr_nome'>".$grupo->gtr_nome."<td/>";
-                                                echo "<td><select name='aug_papel' id='$grupo->gtr_id' disabled>
+                                                echo "<tr><td><input type='checkbox' name='$grupo->gtr_nome' id='$grupo->gtr_id' value='$grupo->gtr_id'>".$grupo->gtr_nome."<td/>";
+                                                echo "<td><select name='$grupo->gtr_id' id='$grupo->gtr_id' >
                                                         <option value='lider'>Líder</option>
                                                         <option value='monitor'>Monitor</option>
                                                         <option value='operador'>Operador</option>
@@ -44,18 +84,18 @@
 
                                             }
                                         }
-                                    }
+                                    }*/
                                 }else{
                                     foreach($this->usuario['grupo'] as $grupo) {
-                                        echo "<tr><td><input type='checkbox' name='gtr_nome' id='$grupo->gtr_id' value='$grupo->gtr_nome'>" . $grupo->gtr_nome . "<td/>";
-                                        echo "<td><select name='aug_papel' id='$grupo->gtr_id' disabled>
+                                        echo "<tr><td><input type='checkbox' name='$grupo->gtr_nome' id='$grupo->gtr_id' value='$grupo->gtr_id'>" . $grupo->gtr_nome . "<td/>";
+                                        echo "<td><select name='$grupo->gtr_id' id='$grupo->gtr_id' >
                                             <option value='lider'>Líder</option>
                                             <option value='monitor'>Monitor</option>
                                             <option value='operador'>Operador</option>
                                             </select></td></tr>";
                                     }
                                 }
-                                 ?>
+                            ?>
                         </table>
                     </div>
                 </div>

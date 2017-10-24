@@ -23,11 +23,12 @@ class UsuariosController extends Xango_AbstractController {
         $this->lightbox();
         $id = $this->getRequest()->getParam("id");
         $nome = $this->getRequest()->getParam("nome");
-
+        // busca os dados do usuário e seus grupos de trabalho
         $data = $this->objGroup->usuGrupoTrabalho($id);
-
+        // consulta todos os grupos de trabalho
         $group = $this->objGroup->selectGroupoTrabalho();
         $dataView = [
+            'id' => $id,
             'nome' => $nome,
             'dados' => $data,
             'grupo' => $group
@@ -36,9 +37,26 @@ class UsuariosController extends Xango_AbstractController {
     }
     function saveGroupAction(){
         if($this->getRequest()->isPost()){
+            // recebe os dados do formulário da view group.phtml
             $data = $this->getRequest()->getPost();
-            print_r($data);
-            die();
+            $id = $data['id'];
+            unset($data['id']);
+            $dataFinal = ['usu_id' => $id];
+            foreach($data as $dado){
+                if(array_key_exists($dado,$data)){
+                    $dataFinal[] = ['gtr_id' => $dado, 'aug_papel' => $data[$dado] ];
+                }
+            }
+            $this->db->beginTransaction();
+            try {
+                // envia os dados para a função de atualização da tabela tbl_assoc_usuario_grupo_trabalho
+                $this->objGroup->atualizaDadosGrupoUsuario($dataFinal);
+                $this->db->commit();
+                $this->setRedirect('/usuarios', 1, 1);
+            }catch (Exception $e) {
+                $this->db->rollBack();
+                $this->setRedirectException('/usuarios', $e);
+            }
         }
     }
 	

@@ -24,6 +24,7 @@ class Xango_Model_GrupoTrabalho extends Xango_AbstractModel {
 		}
 		return $results;
 	}
+
 	public function usuGrupoTrabalho($id){
 	    $sql = "SELECT  gtr.gtr_nome, gtr.gtr_descricao, augt.aug_papel, gtr.gtr_id
                 FROM tbl_assoc_usuario_grupo_trabalho augt INNER JOIN tbl_grupos_trabalho gtr
@@ -31,9 +32,34 @@ class Xango_Model_GrupoTrabalho extends Xango_AbstractModel {
         $result = $this->db->fetchAll($sql);
         return $result;
     }
+
     public function selectGroupoTrabalho(){
 	    $sql = "SELECT * FROM tbl_grupos_trabalho ORDER BY gtr_nome";
 	    $result = $this->db->fetchAll($sql);
 	    return $result;
     }
+
+    public function atualizaDadosGrupoUsuario($data){
+        $id = isset($data['usu_id']) ? $data['usu_id'] : null;
+        unset($data['usu_id']);
+        if($id != null ){
+            $sqlDelete = "DELETE FROM tbl_assoc_usuario_grupo_trabalho WHERE usu_id = $id";
+            $this->db->query($sqlDelete);
+            foreach($data as $dados){
+                $gtr_id = $dados['gtr_id'];
+                if($dados['aug_papel'] === 'lider'){
+                    $aug_papel = 1;
+                }
+                elseif($dados['aug_papel'] === 'monitor'){
+                    $aug_papel = 2;
+                }
+                elseif($dados['aug_papel'] === 'operador'){
+                    $aug_papel = 3;
+                }
+                $sqlInsert = "INSERT INTO tbl_assoc_usuario_grupo_trabalho(gtr_id,usu_id,aug_papel) VALUES ($gtr_id,$id,$aug_papel)";
+                    $this->db->query($sqlInsert);
+            }
+        }
+    }
+
 }
