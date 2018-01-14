@@ -1,0 +1,52 @@
+
+<table class="tabela-busca">
+	<thead>
+		<tr>
+			<th width="5%"></th>
+			<th width="35%">Original</th>
+			<th width="60%">Similares</th>
+		</tr>
+	</thead>
+	<tbody>
+	<?php 
+	foreach($this->matches as $key => $match) { 
+		if(isset($match['similar'])) {
+	?>
+		<tr>
+			<td><a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'ato-edit','ato_id'=>$match['ato_id']),'default',true) ?>" lightbox="true"><img src="/img/icons/set1/document_pencil_16.png"></a></td>
+			
+			<td>
+				<?php echo $match['gia_valor'] ." (". $match['ato_referencia'] .")"; ?>
+				<div class="attr_detail">
+				<?php 
+				// list all the Attributes of the Entity (reference)
+				foreach($match['attrs'] as $attr) { 
+					echo $attr->ttr_nome .": ". $attr->gia_valor ."<br>";
+				} ?>
+				</div>			
+			</td>
+			<td>
+				<?php foreach($match['similar'] as $similar) {
+					echo $similar->gia_valor ." (". $similar->ato_referencia .")";
+					echo "<a href='". $this->url(array('controller'=>'fontes', 'action'=>'ato-edit','ato_id'=>$similar->ato_id),'default',true) ."' lightbox='true'><img src='/img/icons/set1/document_pencil_16.png'></a><br />";
+					
+					//print_r($similar);
+					
+					// list all the Attributes of the Entity (similar)
+					echo "<div class='attr_detail'>";
+					foreach($similar->attrs as $attr) { 
+						echo "". $attr->ttr_nome .": ". $attr->gia_valor ."<br>";
+					}
+					echo "</div><br>";
+					
+				} ?>			
+			</td>
+		</tr>
+	<?php } 
+	} ?>
+	</tbody>
+</table>
+
+<div><br>
+<a class="btn" href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'transcription','id'=>$this->ftn_id),'default',true) ?>">Voltar</a>
+</div>

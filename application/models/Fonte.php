@@ -6,6 +6,25 @@ class Xango_Model_Fonte extends Xango_AbstractModel {
 	protected $_primary = "ftn_id";
     protected $_sequence = "ftn_id";
 	
+	public function getAllDocuments() {
+		$sql = "SELECT ftn.ftn_id, ftn.ftn_nome, ftn.ftn_status, ftn.ftn_convencao, ftn.ftn_cota, ftn.ftn_descricao, ftn.gtr_id, ftn.acv_id,
+		acv.acv_nome, gtr.gtr_nome
+	
+		FROM tbl_fontes AS ftn
+		
+		JOIN tbl_acervos AS acv
+			ON acv.acv_id = ftn.acv_id
+			
+		JOIN tbl_grupos_trabalho AS gtr
+			ON gtr.gtr_id = ftn.gtr_id
+		
+		ORDER BY ftn.ftn_nome";
+		
+		$stmt2 = $this->db->query($sql);
+		$documents = $stmt2->fetchAll();
+		return $documents;
+	}
+	
 	public function getFonteFull($id) {
 		
 		$sql = "
@@ -35,7 +54,7 @@ class Xango_Model_Fonte extends Xango_AbstractModel {
 				
 			WHERE ato.ftn_id = ". $id ."
 			
-			ORDER BY ato.ato_ordem, ato.ato_referencia
+			ORDER BY ato.ato_ordem, ato.ato_id, ato.ato_referencia
 		";
 		
 		//Xango_Model_Ato::getAtoFull($id);
@@ -43,5 +62,21 @@ class Xango_Model_Fonte extends Xango_AbstractModel {
 		$stmt2 = $this->db->query($sql);
 		$fonte['atos'] = (array)$stmt2->fetchAll();		
 		return $fonte;
+	}
+	
+	public function setUsersGroup($id) {
+		$sql = "SELECT u.usu_id, u.usu_nome, u_gt.aug_papel
+					FROM tbl_usuarios AS u
+					JOIN tbl_assoc_usuario_grupo_trabalho u_gt
+						ON u_gt.usu_id = u.usu_id
+					JOIN tbl_fontes AS f
+						ON f.gtr_id = u_gt.gtr_id
+					WHERE u.usu_ativo = 1
+					AND f.ftn_id = ". $id;
+		
+		$stmt2 = $this->db->query($sql);
+		$users = $stmt2->fetchAll();
+		return $users;
+		// todo: tratar erro de retorno vazio
 	}
 }

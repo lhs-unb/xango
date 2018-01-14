@@ -1,0 +1,23 @@
+<form action="<?php echo $this->url(array('controller'=>'predefinitions', 'action'=>'save'),'default',true); ?>" method="POST" enctype="multipart/form-data">
+<fieldset class="form-edit">	
+	<input type="hidden" name="pre_id" id="pre_id" value="<?php echo $this->predefinition['pre_id']; ?>">
+	<ul>
+		<li>
+			<label for="pre_name">Nome</label>
+			<input type="text" name="pre_name" id="pre_name" value="<?php echo $this->predefinition['pre_name']; ?>" size="50" required>
+		</li>
+		<li>
+			<label for="pre_description">Descrição</label>
+			<textarea name="pre_description" id="pre_description" rows="4" cols="80"><?php echo $this->predefinition['pre_description']; ?></textarea>
+		</li>
+		<li>
+			<label for="pre_file">Arquivo (.json)</label>
+			<input type="file" name="pre_file" id="pre_file" size="50" <?php if(!isset($this->predefinition)){ echo "required"; } ?>>
+		</li>
+		<li class="botoes">
+			<input type="submit" class="btn" value="Salvar"/>
+			<input type="button" class="btn" value="Voltar" onClick="$.featherlight.close();" />
+		</li>
+	</ul>
+</fieldset>
+</form>

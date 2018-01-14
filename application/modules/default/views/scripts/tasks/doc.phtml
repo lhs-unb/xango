@@ -1,0 +1,58 @@
+<?php
+$users = array();
+foreach($this->users as $user) {
+	$users[$user->usu_id] = $user;
+}
+
+$roles = array(
+	1 => 'Líder',
+	2 => 'Monitor',
+	3 => 'Operador'
+);
+
+$activities = array(
+	1 => "Transcrição",
+	2 => "Revisão",
+	3 => "Supervisão",
+	9 => "Outro"
+);
+$statuses = array(
+	1 => "Não iniciado",
+	2 => "Finalizado",
+	3 => "Cancelado",
+	4 => "Em andamento"
+);
+?>
+
+<form action="<?php echo $this->url(array('controller'=>'tasks', 'action'=>'doc-save'),'default',true); ?>" method="POST">
+<fieldset class="form-edit">
+	<input type="hidden" name="ftn_id" value="<?php echo $this->doc; ?>">
+	<ul>
+		<li>
+			<label for="usu_id_encarregado">Usuário</label>
+			<select name="usu_id_encarregado" id="usu_id_encarregado">
+				<?php foreach($users as $user) { ?>
+					<option value="<?php echo $user->usu_id; ?>"><?php echo $user->usu_nome . " (". $roles[$user->aug_papel] .")"; ?></option>
+				<?php } ?>
+			<select>
+		</li>
+		<li>
+			<label for="tar_tipo">Tipo</label>
+			<select name="tar_tipo" id="tar_tipo">
+				<?php foreach($activities as $k => $activity) { ?>
+					<option value="<?php echo $k; ?>"><?php echo $activity; ?></option>
+				<?php } ?>
+			<select>
+		</li>
+		<li>
+			<label for="tar_descricao">Descrição</label>
+			<textarea name="tar_descricao" id="tar_descricao" rows="4" cols="80"></textarea>
+		</li>
+		</li>
+		<li class="botoes">
+			<input type="submit" class="btn" value="Salvar"/>
+			<input type="button" class="btn" value="Voltar" onClick='$.featherlight.close();' />
+		</li>
+	</ul>
+</fieldset>
+</form>

@@ -1,0 +1,24 @@
+<form action="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'list-entity-attr'),'default',true); ?>" method="POST">
+<fieldset class="form-edit">
+	<input type="hidden" name="ftn_id" id="ftn_id" value="<?php echo $this->ftn_id; ?>">
+	
+	<p class="advice">
+		Selecione o tipo de atributo que deseja checar.
+	</p>
+	
+	<ul>
+		<li>
+			<label for="prefix">Tipo de atributo</label>
+			<select name="ttr_id" id="ttr_id">
+			<?php foreach($this->types as $type) { ?>
+				<option value="<?php echo $type->ttr_id; ?>"><?php echo $type->ttr_nome; ?> (<?php echo $type->total; ?>)</option>
+			<?php } ?>
+			</select>
+		</li>
+		<li class="botoes">
+			<input type="submit" class="btn" value="Checar"/>
+			<input type="button" class="btn" value="Voltar" onClick="$.featherlight.close();"/>
+		</li>
+	</ul>
+</fieldset>
+</form>

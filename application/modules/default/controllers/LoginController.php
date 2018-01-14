@@ -19,7 +19,7 @@ class LoginController extends Xango_AbstractController {
 			
             if ($result->getCode() == Zend_Auth_Result::SUCCESS) {
 				$objStorage = $authAdapter->getResultRowObject(null, "usu_senha");
-				$this->auth->getStorage()->write($objStorage);				
+				$this->auth->getStorage()->write($objStorage);
 				$this->_redirect('/');
             }
 			else {

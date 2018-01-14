@@ -135,7 +135,17 @@ tr td.actions {
 	border-left: 4px solid #3f3f3f;
 	border-top: 1px solid #3f3f3f;
 	cursor: pointer;
+	text-decoration: none;
 }
+
+.item-menu a {
+	text-decoration: none;
+}
+
+.item-menu a:hover {
+	text-decoration: underline;
+}
+
 .item-menu.on {
 	background:#910D0D;
 	color: #fff;
@@ -238,6 +248,16 @@ tr td.actions {
     border:1px solid #8ed9f6;
 }
 
+
+p.advice {
+    background:#e3f7fc url('../img/icons/set1/info_16.png') no-repeat 10px 50%;
+    border:1px solid #8ed9f6;
+	padding: 10px;
+	padding-left: 40px; 
+	margin-bottom: 10px;
+    border-radius:10px;
+}
+
 /* Validate */
 label.validate_error {
 	/*width: 250px;*/
@@ -275,7 +295,7 @@ label.validate_error {
 }
 
 #fonte_transcricao div#dados {
-	width: 50%;
+	width: 75%;
 }
 
 #fonte_transcricao div#dados span.label {
@@ -297,10 +317,9 @@ label.validate_error {
 	margin-bottom: 5px;
 }
 
-
-
-
-
+.accordion {
+	background: url(../img/sorting.png) no-repeat 99% 14px;	
+}
 
 
 /* Ato edit */
@@ -355,4 +374,10 @@ label.validate_error {
 	margin: 0;
 	padding: 0;
 	margin-bottom: 5px;
+}
+
+/* Consolidate Names */
+div.attr_detail {
+	padding-left: 15px;
+	font-size: 0.8em;
 }

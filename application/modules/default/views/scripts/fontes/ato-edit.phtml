@@ -13,7 +13,7 @@ $(document).ready(function() {
             $.ajax({
                 type: "POST",
                 url: "<?php echo $this->url(array('controller'=>'fontes', 'action'=>'gi-validation'),'default',true) ?>",
-                data: "gi="+value,
+                data: "gi="+value+"&ato="+$("#ato_id").val(),
                 dataType:"html",
                 success: function(msg)
                 {
@@ -306,7 +306,10 @@ function atributo_gi_form(obj) {
 				}
 			});
 		},
-		errorPlacement: function(error, element) {}
+		errorPlacement: function(error, element) {
+			console.log(error);
+			
+		}
 	});
 }
 
@@ -327,7 +330,7 @@ function atributo_gi_delete(obj) {
 	});
 }
 
-function atributo_gi_add(obj){
+function atributo_gi_add(obj){	
 	$(obj).on('click', function() {
 		if($("input[name='gif_id'][sequencia='" + $(this).attr("sequencia") +"']").val() != "") {
 			$("#count_atributo_gi").val(Math.random().toString(36).substring(7));
@@ -356,7 +359,33 @@ $(document).on('click', ".btn-atributo-gi-edit", function() {
 	$("input[type='image'][sequencia='"+ $(this).attr('sequencia') +"']").show();
 	$(".btn-atributo-gi-edit[sequencia='"+ $(this).attr('sequencia') +"']").hide();	
 });
+
+
+<?php
+// Prepare view for predefinitions (just the attributes)
+if(isset($this->js)) {
+	// Enable Reference edit
+	?> 
+		$("#btn-tipo-ato-edit").click();	
+		$("#ato_referencia").val("");
+		$("#ato_referencia").focus();
+	<?php
+	
+	
+	// Add Attributes for Acts
+	foreach($this->js['act'] as $act) {
+	?> 
+		$("#btn-atributo-ato-add").click();
+		$("select[sequencia="+ $("#count_atributo").val() +"]").val("<?php echo $act; ?>").change();
+	<?php	
+	}
+?>
+<?php } ?>
 </script>
+
+
+
+
 
 <div id="ato">
 	<form method="POST" action="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'ato-save'),'default',true) ?>" id="form-ato">
@@ -488,7 +517,19 @@ $(document).on('click', ".btn-atributo-gi-edit", function() {
 					
 					</div>
 				</div>
-				<?php }
+				<?php 
+					// Open predefined Attributes
+					if (isset($this->js)&& isset($this->js['entities'])) {
+						foreach($this->js['entities'][$gi->gif_id] as $attr) {
+						?> 
+						<script>
+							$(".btn-atributo-gi-add[sequencia=<?php echo $sequencia; ?>]").click();
+							$("select[sequencia="+ $("#count_atributo_gi").val() +"]").val("<?php echo $attr; ?>").change();
+						</script>
+						<?php	
+						}
+					}
+				}
 			} ?>
 		</div>
 		
@@ -536,7 +577,7 @@ $(document).on('click', ".btn-atributo-gi-edit", function() {
 </div>
 
 <div id="model" style="display:none">
-	<input type="hidden" id="count_atributo" value="1">
+	<input type="text" id="count_atributo" value="1">
 	<div id="model_atributo" sequencia="0" style="width: 100%; float:left">
 		<form method="POST" action="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'atributo-ato-save'),'default',true) ?>" class="form-atributo-ato" sequencia="0">
 		<input type="hidden" name="aat_id" value="" sequencia="0">

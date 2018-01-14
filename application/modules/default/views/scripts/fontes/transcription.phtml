@@ -14,6 +14,27 @@ $tipos_status = array(
 	5 => "Interrompida"
 );
 
+// Tasks
+
+$roles = array(
+	1 => 'Líder',
+	2 => 'Monitor',
+	3 => 'Operador'
+);
+
+$activities = array(
+	1 => "Transcrição",
+	2 => "Revisão",
+	3 => "Supervisão",
+	9 => "Outro"
+);
+$statuses = array(
+	1 => "Não iniciado",
+	2 => "Finalizado",
+	3 => "Cancelado",
+	4 => "Em andamento"
+);
+
 ?>
 
 <div id="fonte_transcricao">
@@ -23,34 +44,104 @@ $tipos_status = array(
 		<span class="label">Grupo de Trabalho: </span><span class="info"><?php echo $this->fonte['gtr_nome']; ?></span>
 		<span class="label">Convenção: </span><span class="info"><?php echo $tipos_convencao[$this->fonte['ftn_convencao']]; ?></span>
 		<span class="label">Status: </span><span class="info"><?php echo $tipos_status[$this->fonte['ftn_status']]; ?></span>
-		
 		<?php if($this->fonte['ftn_nome']) echo "<p>". $this->fonte['ftn_descricao'] ."<p>"; ?>
 		
-		
-		<span class="label">Editores: </span><span class="info">TODO</span>
 	</div>
 
 	<div id="acoes">
-		<h4>Ações</h4>
-		<input type="button" class="btn" value="Habilitar Transcrição"/> <br/>
-		<input type="button" class="btn" value="Alterar Status"/>
-	</div>
-
-	<div id="resumo">
-		<h4>Resumo/Estatísticas</h4>
-		Atos: <?php echo count($this->fonte['atos']); ?><br>
-		Grupos de Informação: <br>
-		Atributos: <br>
+		<h4>Ferramentas</h4>
+		<a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'consolidate-names','id'=>$this->fonte['ftn_id']),'default',false); ?>">[Consolidar Nomes]</a><br />
+		<a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'validate-entity-attr','id'=>$this->fonte['ftn_id']),'default',false); ?>" lightbox="true">[Validar Atributos]</a><br />
+		<a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'order-acts','id'=>$this->fonte['ftn_id']),'default',false); ?>" lightbox="true">[Ordenar Atos]</a><br />
 	</div>
 	
+	<div id="resumo" class="accordion closed">
+		<h4>Resumo/Estatísticas</h4>
+		<div>
+			Atos: <?php echo count($this->fonte['atos']); ?><br>
+			Grupos de Informação: <br>
+			Atributos: <br>
+		</div>
+	</div>
+	
+	<!--
 	<div id="imagens">
 		<h4>Imagens</h4>
 		TODO
 	</div>
+	-->
+	
+	<script>
+	
+	$(function() {
+		$(".accordion").accordion({
+			collapsible: true,
+			animate: 50
+		});
 
-	<div id="detalhes">
+		$(".accordion.closed h4").click();
+	});
+	</script>
+	
+	<div id="tasks" class="accordion closed">
+		<h4>
+			Tarefas &nbsp;
+			<a href="<?php echo $this->url(array('controller'=>'tasks', 'action'=>'doc', 'id'=>$this->fonte['ftn_id']),'default',true) ?>" lightbox="true"><img src="/img/icons/set1/plus_16.png"></a>
+		</h4>
+		
+		<div>
+		<table class="tabela-busca">
+			<thead>
+				<tr>
+					<th width="16%">Encarregado</th>
+					<th width="8%">Atividade</th>
+					<th width="48%">Descrição</th>
+					<th width="8%">Status</th>
+					<th width="14%">Últ. Atualização</th>
+					<th width="6%"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php foreach($this->tasks as $task) { ?>
+				<tr>
+					<td><?php echo $task->encarregado; ?></td>
+					<td><?php echo $activities[$task->tar_tipo]; ?></td>
+					<td><?php echo $task->tar_descricao; ?></td>
+					<td><?php echo $statuses[$task->tar_status]; ?></td>
+					<td><?php echo $task->tar_alteracao; ?></td>
+					<td class="actions">
+						<?php if($task->usu_id_encarregado == $this->user->usu_id) { ?>
+							<?php if($task->tar_status == 4) { ?>
+							<a href="<?php echo $this->url(array('controller'=>'tasks', 'action'=>'approve', 'id'=>$task->tar_id),'default',true); ?>"><img src="/img/icons/set1/tick_16.png"></a>
+							<?php } ?>
+							<?php if($task->tar_status == 1) { ?>
+								<a href="<?php echo $this->url(array('controller'=>'tasks', 'action'=>'start', 'id'=>$task->tar_id),'default',true); ?>"><img src="/img/icons/set1/paly_16.png"></a>
+							<?php } ?>
+							<!-- <a href="<?php echo $this->url(array('controller'=>'tasks', 'action'=>'cancel', 'id'=>$task->tar_id),'default',true); ?>" delete="true"><img src="/img/icons/set1/trash_16.png"></a> -->
+						<?php } ?>
+					</td>
+				</tr>
+				<?php } ?>
+			</tbody>
+		</table>
+		</div>
+	</div>
+	
+	<div id="detalhes"  class="accordion">
 		<h4>Indexação</h4>
-		<em><a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'ato-edit','ftn_id'=>$this->fonte['ftn_id']),'default',true) ?>" lightbox="modal"><img src="/img/icons/set1/plus_16.png"> Ato</a></em>
+		
+		<div>
+		<br>
+		<em>Inserir novo ato com o modelo:</em>
+		<select name="pre_id" id="pre_id">
+			<option value="0"></option>
+			<?php foreach($this->predefinitions as $pre) { ?>
+				<option value="<?php echo $pre['pre_id']; ?>"><?php echo $pre['pre_name']; ?></option>
+			<?php } ?>
+		</select>
+		<a id="btn_add" href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'ato-edit','ftn_id'=>$this->fonte['ftn_id']),'default',true) ?>/predef/0" lightbox="modal"><img src="/img/icons/set1/plus_16.png"></a>
+		<br><br>
+		
 		
 		<table class="tabela-busca">
 			<thead>
@@ -75,6 +166,15 @@ $tipos_status = array(
 			<?php } ?>
 			</tbody>
 		</table>
+		</div>
 	</div>
 </div>
 
+<script>
+
+pos = $("#btn_add").attr('href').indexOf('predef/') + 7;
+
+$("#pre_id").on('change', function(event) {
+	$("#btn_add").attr('href', $("#btn_add").attr('href').substr(0, pos) +''+ $(this).val());
+});
+</script>

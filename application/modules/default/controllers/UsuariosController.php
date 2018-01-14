@@ -42,12 +42,14 @@ class UsuariosController extends Xango_AbstractController {
             $id = $data['id'];
             unset($data['id']);
             $dataFinal = ['usu_id' => $id];
+			
             foreach($data as $dado){
                 if(array_key_exists($dado,$data)){
                     $dataFinal[] = ['gtr_id' => $dado, 'aug_papel' => $data[$dado] ];
                 }
             }
-            $this->db->beginTransaction();
+            
+			$this->db->beginTransaction();
             try {
                 // envia os dados para a função de atualização da tabela tbl_assoc_usuario_grupo_trabalho
                 $this->objGroup->atualizaDadosGrupoUsuario($dataFinal);
@@ -69,6 +71,7 @@ class UsuariosController extends Xango_AbstractController {
 			*/
 			// pega os dados do usuário
 			$usuario = $this->user;
+			
             // verifica se a senha enviada para atulizar é diferente de null, caso contrário retira do array de update
 			if($data["usu_senha"] != null )
 				$data["usu_senha"] = md5($data["usu_senha"]);
@@ -81,7 +84,7 @@ class UsuariosController extends Xango_AbstractController {
 				$data["usu_ativo"] = 0;
 
 			$this->db->beginTransaction();
-			try {
+			try {				
 				$this->objUsuario->save($data);
 				$this->db->commit();
 				$this->setRedirect('/usuarios', 1, 1);

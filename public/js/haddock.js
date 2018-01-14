@@ -52,10 +52,23 @@ $(document).ready(function() {
 	$("[lightbox='true']").featherlight({
 	});
 	
+	
+	/*
+	Modal: 
+		doesn't close when you click outside, 
+		reloads the page after close, 
+		checks if there is non-submitted fields (not disabled)	
+	*/
+	
 	$("[lightbox='modal']").featherlight({
 		closeOnClick: 'false',
+		beforeClose: function() {
+			//console.log('oi');
+			//return false;
+		},
 		afterClose: function() {
 			location.reload();
 		}
 	});
+	
 });

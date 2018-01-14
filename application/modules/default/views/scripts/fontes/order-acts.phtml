@@ -1,0 +1,38 @@
+<form action="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'order-acts-save'),'default',true); ?>" method="POST">
+<fieldset class="form-edit">
+	<input type="hidden" name="ftn_id" id="ftn_id" value="<?php echo $this->ftn_id; ?>">
+	
+	<p class="advice">
+		Configure os parâmetros de nomeação dos atos. O sistema está pré-configurado <br />para códices com o padrão: 
+		<em>fl. 10-11v</em>, <em>fl. 23</em>, <em>fl. 25v-26v</em>. <br />Ao submeter está página, a ordenação da fonte
+		será alterada.
+	</p>
+	
+	<ul>
+		<li>
+			<label for="prefix">Prefixo</label>
+			<input type="text" name="prefix" id="prefix" value="fl." size="10">
+		</li>
+		<li>
+			<label for="suffix">Sufixo</label>
+			<input type="text" name="suffix" id="suffix" value="" size="10">
+		</li>
+		<li>
+			<label for="divide">Divisor</label>
+			<input type="text" name="divide" id="divide" value="-" size="10">
+		</li>
+		<li>
+			<label for="front">Folio frente</label>
+			<input type="text" name="front" id="front" value="" size="10">
+		</li>
+		<li>
+			<label for="verso">Folio verso</label>
+			<input type="text" name="verso" id="verso" value="v" size="10">
+		</li>
+		<li class="botoes">
+			<input type="submit" class="btn" value="Salvar"/>
+			<input type="button" class="btn" value="Voltar" onClick="$.featherlight.close();"/>
+		</li>
+	</ul>
+</fieldset>
+</form>

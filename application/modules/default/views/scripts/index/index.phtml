@@ -1,19 +1,86 @@
+<?php
+
+$activities = array(
+	1 => "Transcrição",
+	2 => "Revisão",
+	3 => "Supervisão",
+	9 => "Outro"
+);
+$statuses = array(
+	1 => "Não iniciado",
+	2 => "Finalizado",
+	3 => "Cancelado",
+	4 => "Em andamento"
+);
+
+?>
+
+<h2>Bandeja de Trabalho</h2>
+
+<?php if(count($this->tasks) > 0) { ?>
+<table class="tabela-busca">
+	<thead>
+		<tr>
+			<th width="25%" data-sort="string">Fonte</th>
+			<th width="48%" data-sort="string">Descrição</th>
+			<th width="10%" data-sort="string">Tipo</th>
+			<th width="10%" data-sort="string">Status</th>
+			<th width="7%" ></th>
+		</tr>
+	</thead>
+	<tbody>
+		<?php foreach($this->tasks as $task) { ?>
+		<tr>
+			<td><?php echo $task->ftn_nome; ?></td>
+			<td><?php echo $task->tar_descricao; ?></td>
+			<td><?php echo $activities[$task->tar_tipo]; ?></td>
+			<td><?php echo $statuses[$task->tar_status]; ?></td>
+			<td>
+				<a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'transcription', 'id'=>$task->ftn_id),'default',true) ?>"><img src="/img/icons/set1/wand_16.png"></a>
+				<?php if($task->tar_status == 1) { ?>
+					<a href="<?php echo $this->url(array('controller'=>'tasks', 'action'=>'start', 'id'=>$task->tar_id),'default',true); ?>"><img src="/img/icons/set1/paly_16.png"></a>
+				<?php } ?>
+				<a href="<?php echo $this->url(array('controller'=>'tasks', 'action'=>'approve', 'id'=>$task->tar_id),'default',true); ?>"><img src="/img/icons/set1/tick_16.png"></a>
+			</td>
+		</tr>
+		<?php } ?>
+	</tbody>
+</table>
+<?php } else { ?>
+<em>Parabéns, não há nenhuma tarefa em sua bandeja de trabalho.</em>
+<br>
+<?php } ?>
+
+<br><hr><br>
+
+
 <h2>Ranking</h2>
 
-<table width="50%">
+<table width="30%">
 	<thead>
 		<tr>
 			<th width="70%" data-sort="string">Nome</th>
-			<th width="15%" data-sort="string">Level</th>
 			<th width="15%" data-sort="string">Score</th>
 		</tr>
 	</thead>
 	<tbody>
 		<?php foreach($this->usuarios as $usuario) { ?>
 		<tr>
-			<td><?php echo $usuario->usu_nome; ?></td>
-			<td><?php echo $usuario->usu_level; ?></td>
-			<td><?php echo $usuario->usu_score; ?></td>
+			<td>
+				<?php 
+					if($this->user->usu_id == $usuario->usu_id)
+						echo "<strong>* ". $usuario->usu_nome ."<strong>"; 
+					else
+						echo $usuario->usu_nome; 
+				?>
+			</td>
+			<td>
+				<?php 
+					if($this->user->usu_id == $usuario->usu_id)
+						echo "<strong>". number_format($usuario->usu_score) ."<strong>"; 
+					else
+						echo number_format($usuario->usu_score); 
+				?>
 		</tr>
 		<?php } ?>
 	</tbody>

@@ -3955,3 +3955,1050 @@ Zend_View_Helper_: Zend/View/Helper/;C:/www/xango2/application/modules/default/v
   'ato_id' => '45',
   'module' => 'default',
 )
+2017-10-30T23:03:16+00:00 NOTICE (5): Page not found
+2017-10-30T23:03:16+00:00 NOTICE (5): Action "tasks" does not exist and was not trapped in __call()
+2017-10-30T23:03:16+00:00 NOTICE (5): #0 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(518): Zend_Controller_Action->__call('tasksAction', Array)
+#1 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('tasksAction')
+#2 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#3 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#4 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#5 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#6 {main}
+2017-10-30T23:03:16+00:00 NOTICE (5): array (
+  'controller' => 'fontes',
+  'action' => 'tasks',
+  'id' => '11',
+  'module' => 'default',
+)
+2017-10-30T23:07:41+00:00 NOTICE (5): Page not found
+2017-10-30T23:07:41+00:00 NOTICE (5): Action "tasks" does not exist and was not trapped in __call()
+2017-10-30T23:07:41+00:00 NOTICE (5): #0 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(518): Zend_Controller_Action->__call('tasksAction', Array)
+#1 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('tasksAction')
+#2 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#3 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#4 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#5 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#6 {main}
+2017-10-30T23:07:41+00:00 NOTICE (5): array (
+  'controller' => 'fontes',
+  'action' => 'tasks',
+  'id' => '4',
+  'module' => 'default',
+)
+2017-10-30T23:07:43+00:00 NOTICE (5): Page not found
+2017-10-30T23:07:43+00:00 NOTICE (5): Action "tasks" does not exist and was not trapped in __call()
+2017-10-30T23:07:43+00:00 NOTICE (5): #0 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(518): Zend_Controller_Action->__call('tasksAction', Array)
+#1 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('tasksAction')
+#2 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#3 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#4 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#5 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#6 {main}
+2017-10-30T23:07:43+00:00 NOTICE (5): array (
+  'controller' => 'fontes',
+  'action' => 'tasks',
+  'id' => '4',
+  'module' => 'default',
+)
+2017-10-30T23:10:34+00:00 CRIT (2): Application error
+2017-10-30T23:10:34+00:00 CRIT (2): script 'tasks/doc.phtml' not found in path (D:/dev/www/xango_dev/application/modules/default/views\scripts/)
+2017-10-30T23:10:34+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\View\Abstract.php(884): Zend_View_Abstract->_script('tasks/doc.phtml')
+#1 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(900): Zend_View_Abstract->render('tasks/doc.phtml')
+#2 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(921): Zend_Controller_Action_Helper_ViewRenderer->renderScript('tasks/doc.phtml', NULL)
+#3 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(960): Zend_Controller_Action_Helper_ViewRenderer->render()
+#4 D:\dev\www\xango_dev\library\Zend\Controller\Action\HelperBroker.php(277): Zend_Controller_Action_Helper_ViewRenderer->postDispatch()
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(527): Zend_Controller_Action_HelperBroker->notifyPostDispatch()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('docAction')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-10-30T23:10:34+00:00 CRIT (2): array (
+  'controller' => 'tasks',
+  'action' => 'doc',
+  'id' => '3',
+  'module' => 'default',
+)
+2017-10-30T23:10:35+00:00 CRIT (2): Application error
+2017-10-30T23:10:35+00:00 CRIT (2): script 'tasks/doc.phtml' not found in path (D:/dev/www/xango_dev/application/modules/default/views\scripts/)
+2017-10-30T23:10:35+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\View\Abstract.php(884): Zend_View_Abstract->_script('tasks/doc.phtml')
+#1 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(900): Zend_View_Abstract->render('tasks/doc.phtml')
+#2 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(921): Zend_Controller_Action_Helper_ViewRenderer->renderScript('tasks/doc.phtml', NULL)
+#3 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(960): Zend_Controller_Action_Helper_ViewRenderer->render()
+#4 D:\dev\www\xango_dev\library\Zend\Controller\Action\HelperBroker.php(277): Zend_Controller_Action_Helper_ViewRenderer->postDispatch()
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(527): Zend_Controller_Action_HelperBroker->notifyPostDispatch()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('docAction')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-10-30T23:10:35+00:00 CRIT (2): array (
+  'controller' => 'tasks',
+  'action' => 'doc',
+  'id' => '3',
+  'module' => 'default',
+)
+2017-10-30T23:10:36+00:00 CRIT (2): Application error
+2017-10-30T23:10:36+00:00 CRIT (2): script 'tasks/doc.phtml' not found in path (D:/dev/www/xango_dev/application/modules/default/views\scripts/)
+2017-10-30T23:10:36+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\View\Abstract.php(884): Zend_View_Abstract->_script('tasks/doc.phtml')
+#1 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(900): Zend_View_Abstract->render('tasks/doc.phtml')
+#2 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(921): Zend_Controller_Action_Helper_ViewRenderer->renderScript('tasks/doc.phtml', NULL)
+#3 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(960): Zend_Controller_Action_Helper_ViewRenderer->render()
+#4 D:\dev\www\xango_dev\library\Zend\Controller\Action\HelperBroker.php(277): Zend_Controller_Action_Helper_ViewRenderer->postDispatch()
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(527): Zend_Controller_Action_HelperBroker->notifyPostDispatch()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('docAction')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-10-30T23:10:36+00:00 CRIT (2): array (
+  'controller' => 'tasks',
+  'action' => 'doc',
+  'id' => '3',
+  'module' => 'default',
+)
+2017-10-30T23:17:58+00:00 CRIT (2): Application error
+2017-10-30T23:17:58+00:00 CRIT (2): SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'usu_id' in field list is ambiguous
+2017-10-30T23:17:58+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT usu_id, ...', Array)
+#3 D:\dev\www\xango_dev\application\models\Fonte.php(55): Zend_Db_Adapter_Pdo_Abstract->query('SELECT usu_id, ...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\TasksController.php(20): Xango_Model_Fonte->setUsersGroup('11')
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): TasksController->docAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('docAction')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-10-30T23:17:58+00:00 CRIT (2): array (
+  'controller' => 'tasks',
+  'action' => 'doc',
+  'id' => '11',
+  'module' => 'default',
+)
+2017-10-30T23:17:59+00:00 CRIT (2): Application error
+2017-10-30T23:17:59+00:00 CRIT (2): SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'usu_id' in field list is ambiguous
+2017-10-30T23:17:59+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT usu_id, ...', Array)
+#3 D:\dev\www\xango_dev\application\models\Fonte.php(55): Zend_Db_Adapter_Pdo_Abstract->query('SELECT usu_id, ...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\TasksController.php(20): Xango_Model_Fonte->setUsersGroup('11')
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): TasksController->docAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('docAction')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-10-30T23:17:59+00:00 CRIT (2): array (
+  'controller' => 'tasks',
+  'action' => 'doc',
+  'id' => '11',
+  'module' => 'default',
+)
+2017-10-30T23:18:00+00:00 CRIT (2): Application error
+2017-10-30T23:18:00+00:00 CRIT (2): SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'usu_id' in field list is ambiguous
+2017-10-30T23:18:00+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT usu_id, ...', Array)
+#3 D:\dev\www\xango_dev\application\models\Fonte.php(55): Zend_Db_Adapter_Pdo_Abstract->query('SELECT usu_id, ...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\TasksController.php(20): Xango_Model_Fonte->setUsersGroup('2')
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): TasksController->docAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('docAction')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-10-30T23:18:00+00:00 CRIT (2): array (
+  'controller' => 'tasks',
+  'action' => 'doc',
+  'id' => '2',
+  'module' => 'default',
+)
+2017-10-30T23:18:03+00:00 CRIT (2): Application error
+2017-10-30T23:18:03+00:00 CRIT (2): SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'usu_id' in field list is ambiguous
+2017-10-30T23:18:03+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT usu_id, ...', Array)
+#3 D:\dev\www\xango_dev\application\models\Fonte.php(55): Zend_Db_Adapter_Pdo_Abstract->query('SELECT usu_id, ...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\TasksController.php(20): Xango_Model_Fonte->setUsersGroup('6')
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): TasksController->docAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('docAction')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-10-30T23:18:03+00:00 CRIT (2): array (
+  'controller' => 'tasks',
+  'action' => 'doc',
+  'id' => '6',
+  'module' => 'default',
+)
+2017-10-30T23:18:04+00:00 CRIT (2): Application error
+2017-10-30T23:18:04+00:00 CRIT (2): SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'usu_id' in field list is ambiguous
+2017-10-30T23:18:04+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT usu_id, ...', Array)
+#3 D:\dev\www\xango_dev\application\models\Fonte.php(55): Zend_Db_Adapter_Pdo_Abstract->query('SELECT usu_id, ...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\TasksController.php(20): Xango_Model_Fonte->setUsersGroup('6')
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): TasksController->docAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('docAction')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-10-30T23:18:04+00:00 CRIT (2): array (
+  'controller' => 'tasks',
+  'action' => 'doc',
+  'id' => '6',
+  'module' => 'default',
+)
+2017-10-30T23:18:08+00:00 CRIT (2): Application error
+2017-10-30T23:18:08+00:00 CRIT (2): SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'usu_id' in field list is ambiguous
+2017-10-30T23:18:08+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT usu_id, ...', Array)
+#3 D:\dev\www\xango_dev\application\models\Fonte.php(55): Zend_Db_Adapter_Pdo_Abstract->query('SELECT usu_id, ...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\TasksController.php(20): Xango_Model_Fonte->setUsersGroup('5')
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): TasksController->docAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('docAction')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-10-30T23:18:08+00:00 CRIT (2): array (
+  'controller' => 'tasks',
+  'action' => 'doc',
+  'id' => '5',
+  'module' => 'default',
+)
+2017-10-30T23:18:17+00:00 CRIT (2): Application error
+2017-10-30T23:18:17+00:00 CRIT (2): SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'usu_id' in field list is ambiguous
+2017-10-30T23:18:17+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT usu_id, ...', Array)
+#3 D:\dev\www\xango_dev\application\models\Fonte.php(55): Zend_Db_Adapter_Pdo_Abstract->query('SELECT usu_id, ...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\TasksController.php(20): Xango_Model_Fonte->setUsersGroup('2')
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): TasksController->docAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('docAction')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-10-30T23:18:17+00:00 CRIT (2): array (
+  'controller' => 'tasks',
+  'action' => 'doc',
+  'id' => '2',
+  'module' => 'default',
+)
+2017-10-30T23:18:18+00:00 CRIT (2): Application error
+2017-10-30T23:18:18+00:00 CRIT (2): SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'usu_id' in field list is ambiguous
+2017-10-30T23:18:18+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT usu_id, ...', Array)
+#3 D:\dev\www\xango_dev\application\models\Fonte.php(55): Zend_Db_Adapter_Pdo_Abstract->query('SELECT usu_id, ...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\TasksController.php(20): Xango_Model_Fonte->setUsersGroup('2')
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): TasksController->docAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('docAction')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-10-30T23:18:18+00:00 CRIT (2): array (
+  'controller' => 'tasks',
+  'action' => 'doc',
+  'id' => '2',
+  'module' => 'default',
+)
+2017-10-30T23:18:25+00:00 CRIT (2): Application error
+2017-10-30T23:18:25+00:00 CRIT (2): SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'usu_id' in field list is ambiguous
+2017-10-30T23:18:25+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT usu_id, ...', Array)
+#3 D:\dev\www\xango_dev\application\models\Fonte.php(55): Zend_Db_Adapter_Pdo_Abstract->query('SELECT usu_id, ...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\TasksController.php(20): Xango_Model_Fonte->setUsersGroup('3')
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): TasksController->docAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('docAction')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-10-30T23:18:25+00:00 CRIT (2): array (
+  'controller' => 'tasks',
+  'action' => 'doc',
+  'id' => '3',
+  'module' => 'default',
+)
+2017-10-30T23:18:40+00:00 CRIT (2): Application error
+2017-10-30T23:18:40+00:00 CRIT (2): SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'usu_id' in field list is ambiguous
+2017-10-30T23:18:40+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT usu_id, ...', Array)
+#3 D:\dev\www\xango_dev\application\models\Fonte.php(55): Zend_Db_Adapter_Pdo_Abstract->query('SELECT usu_id, ...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\TasksController.php(20): Xango_Model_Fonte->setUsersGroup('3')
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): TasksController->docAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('docAction')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-10-30T23:18:40+00:00 CRIT (2): array (
+  'controller' => 'tasks',
+  'action' => 'doc',
+  'id' => '3',
+  'module' => 'default',
+)
+2017-10-30T23:18:42+00:00 CRIT (2): Application error
+2017-10-30T23:18:42+00:00 CRIT (2): SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'usu_id' in field list is ambiguous
+2017-10-30T23:18:42+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT usu_id, ...', Array)
+#3 D:\dev\www\xango_dev\application\models\Fonte.php(55): Zend_Db_Adapter_Pdo_Abstract->query('SELECT usu_id, ...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\TasksController.php(20): Xango_Model_Fonte->setUsersGroup('3')
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): TasksController->docAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('docAction')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-10-30T23:18:42+00:00 CRIT (2): array (
+  'controller' => 'tasks',
+  'action' => 'doc',
+  'id' => '3',
+  'module' => 'default',
+)
+2017-10-30T23:18:52+00:00 CRIT (2): Application error
+2017-10-30T23:18:52+00:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u_gt.usu_ativo' in 'where clause'
+2017-10-30T23:18:52+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT u.usu_id...', Array)
+#3 D:\dev\www\xango_dev\application\models\Fonte.php(55): Zend_Db_Adapter_Pdo_Abstract->query('SELECT u.usu_id...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\TasksController.php(20): Xango_Model_Fonte->setUsersGroup('3')
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): TasksController->docAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('docAction')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-10-30T23:18:52+00:00 CRIT (2): array (
+  'controller' => 'tasks',
+  'action' => 'doc',
+  'id' => '3',
+  'module' => 'default',
+)
+2017-10-31T18:11:33+00:00 NOTICE (5): Page not found
+2017-10-31T18:11:33+00:00 NOTICE (5): Action "docsave" does not exist and was not trapped in __call()
+2017-10-31T18:11:33+00:00 NOTICE (5): #0 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(518): Zend_Controller_Action->__call('docsaveAction', Array)
+#1 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('docsaveAction')
+#2 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#3 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#4 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#5 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#6 {main}
+2017-10-31T18:11:33+00:00 NOTICE (5): array (
+  'controller' => 'tasks',
+  'action' => 'docSave',
+  'module' => 'default',
+  'usu_id' => '1',
+  'tar_instrucao' => 'instruc',
+)
+2017-10-31T18:38:42+00:00 CRIT (2): Application error
+2017-10-31T18:38:42+00:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tar_status, tar_tipo' in 'order clause'
+2017-10-31T18:38:42+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_tar...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\TasksController.php(19): Zend_Db_Table_Abstract->fetchAll('ftn_id = 11', 'tar_status, tar...')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): TasksController->docAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('docAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-31T18:38:42+00:00 CRIT (2): array (
+  'controller' => 'tasks',
+  'action' => 'doc',
+  'id' => '11',
+  'module' => 'default',
+)
+2017-10-31T18:38:44+00:00 CRIT (2): Application error
+2017-10-31T18:38:44+00:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tar_status, tar_tipo' in 'order clause'
+2017-10-31T18:38:44+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_tar...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\TasksController.php(19): Zend_Db_Table_Abstract->fetchAll('ftn_id = 11', 'tar_status, tar...')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): TasksController->docAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('docAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-10-31T18:38:44+00:00 CRIT (2): array (
+  'controller' => 'tasks',
+  'action' => 'doc',
+  'id' => '11',
+  'module' => 'default',
+)
+2017-11-21T19:22:59+00:00 CRIT (2): Application error
+2017-11-21T19:22:59+00:00 CRIT (2): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+					AND ttr_id = 'nome'' at line 13
+2017-11-21T19:22:59+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT DISTINCT...', Array)
+#3 D:\dev\www\xango_dev\application\models\AtributoGrupoInformacao.php(36): Zend_Db_Adapter_Pdo_Abstract->query('SELECT DISTINCT...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(293): Xango_Model_AtributoGrupoInformacao->attrBySrc(Array, 'nome')
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->consolidateNamesAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('consolidateName...')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-11-21T19:22:59+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'consolidate-names',
+  'id' => '2',
+  'module' => 'default',
+)
+2017-11-24T10:39:59+00:00 NOTICE (5): Page not found
+2017-11-24T10:39:59+00:00 NOTICE (5): Invalid controller specified (img)
+2017-11-24T10:39:59+00:00 NOTICE (5): #0 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#3 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#4 {main}
+2017-11-24T10:39:59+00:00 NOTICE (5): array (
+  'controller' => 'img',
+  'action' => 'icons',
+  'set1' => 'play_16.png',
+  'module' => 'default',
+)
+2017-11-25T11:59:18+00:00 CRIT (2): Application error
+2017-11-25T11:59:18+00:00 CRIT (2): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'xango_dev.tbl_taredas' doesn't exist
+2017-11-25T11:59:18+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT tar.tar_...', Array)
+#3 D:\dev\www\xango_dev\application\models\Task.php(22): Zend_Db_Adapter_Pdo_Abstract->query('SELECT tar.tar_...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\IndexController.php(13): Xango_Model_Task->getFullTasks('usu_id_encarreg...')
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): IndexController->indexAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('indexAction')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-11-25T11:59:18+00:00 CRIT (2): array (
+  'controller' => 'index',
+  'action' => 'index',
+  'module' => 'default',
+)
+2017-11-25T13:17:23+00:00 NOTICE (5): Page not found
+2017-11-25T13:17:23+00:00 NOTICE (5): Invalid controller specified (predefinitions)
+2017-11-25T13:17:23+00:00 NOTICE (5): #0 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#3 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#4 {main}
+2017-11-25T13:17:23+00:00 NOTICE (5): array (
+  'controller' => 'predefinitions',
+  'action' => 'index',
+  'module' => 'default',
+)
+2017-11-25T13:17:39+00:00 CRIT (2): Application error
+2017-11-25T13:17:39+00:00 CRIT (2): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'xango_dev.tbl_predefinition' doesn't exist
+2017-11-25T13:17:39+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('DESCRIBE `tbl_p...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Mysql.php(169): Zend_Db_Adapter_Pdo_Abstract->query('DESCRIBE `tbl_p...')
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(836): Zend_Db_Adapter_Pdo_Mysql->describeTable('tbl_predefiniti...', NULL)
+#5 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(858): Zend_Db_Table_Abstract->_setupMetadata()
+#6 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(898): Zend_Db_Table_Abstract->_getCols()
+#7 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(983): Zend_Db_Table_Abstract->_setupPrimaryKey()
+#8 D:\dev\www\xango_dev\library\Zend\Db\Table\Select.php(100): Zend_Db_Table_Abstract->info()
+#9 D:\dev\www\xango_dev\library\Zend\Db\Table\Select.php(78): Zend_Db_Table_Select->setTable(Object(Xango_Model_Predefinition))
+#10 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1019): Zend_Db_Table_Select->__construct(Object(Xango_Model_Predefinition))
+#11 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1372): Zend_Db_Table_Abstract->select()
+#12 D:\dev\www\xango_dev\application\modules\default\controllers\PredefinitionsController.php(11): Zend_Db_Table_Abstract->fetchAll(NULL, 'tpf_nome')
+#13 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): PredefinitionsController->indexAction()
+#14 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('indexAction')
+#15 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#16 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#17 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#18 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#19 {main}
+2017-11-25T13:17:39+00:00 CRIT (2): array (
+  'controller' => 'predefinitions',
+  'action' => 'index',
+  'module' => 'default',
+)
+2017-11-25T13:18:31+00:00 CRIT (2): Application error
+2017-11-25T13:18:31+00:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'tpf_nome' in 'order clause'
+2017-11-25T13:18:31+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_pre...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\PredefinitionsController.php(11): Zend_Db_Table_Abstract->fetchAll(NULL, 'tpf_nome')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): PredefinitionsController->indexAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('indexAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-11-25T13:18:31+00:00 CRIT (2): array (
+  'controller' => 'predefinitions',
+  'action' => 'index',
+  'module' => 'default',
+)
+2017-11-25T13:18:45+00:00 CRIT (2): Application error
+2017-11-25T13:18:45+00:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pre_nome' in 'order clause'
+2017-11-25T13:18:45+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_pre...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\PredefinitionsController.php(11): Zend_Db_Table_Abstract->fetchAll(NULL, 'pre_nome')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): PredefinitionsController->indexAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('indexAction')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-11-25T13:18:45+00:00 CRIT (2): array (
+  'controller' => 'predefinitions',
+  'action' => 'index',
+  'module' => 'default',
+)
+2017-11-25T13:18:51+00:00 CRIT (2): Application error
+2017-11-25T13:18:51+00:00 CRIT (2): script 'predefinitions/index.phtml' not found in path (D:/dev/www/xango_dev/application/modules/default/views\scripts/)
+2017-11-25T13:18:51+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\View\Abstract.php(884): Zend_View_Abstract->_script('predefinitions/...')
+#1 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(900): Zend_View_Abstract->render('predefinitions/...')
+#2 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(921): Zend_Controller_Action_Helper_ViewRenderer->renderScript('predefinitions/...', NULL)
+#3 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(960): Zend_Controller_Action_Helper_ViewRenderer->render()
+#4 D:\dev\www\xango_dev\library\Zend\Controller\Action\HelperBroker.php(277): Zend_Controller_Action_Helper_ViewRenderer->postDispatch()
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(527): Zend_Controller_Action_HelperBroker->notifyPostDispatch()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('indexAction')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-11-25T13:18:51+00:00 CRIT (2): array (
+  'controller' => 'predefinitions',
+  'action' => 'index',
+  'module' => 'default',
+)
+2017-11-25T13:24:31+00:00 NOTICE (5): Page not found
+2017-11-25T13:24:31+00:00 NOTICE (5): Invalid controller specified (js)
+2017-11-25T13:24:31+00:00 NOTICE (5): #0 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#3 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#4 {main}
+2017-11-25T13:24:31+00:00 NOTICE (5): array (
+  'controller' => 'js',
+  'action' => 'jquery.fileupload.css',
+  'module' => 'default',
+)
+2017-11-25T13:26:08+00:00 NOTICE (5): Page not found
+2017-11-25T13:26:08+00:00 NOTICE (5): Invalid controller specified (js)
+2017-11-25T13:26:08+00:00 NOTICE (5): #0 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#3 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#4 {main}
+2017-11-25T13:26:08+00:00 NOTICE (5): array (
+  'controller' => 'js',
+  'action' => 'jquery.fileupload.css',
+  'module' => 'default',
+)
+2017-11-25T13:26:32+00:00 NOTICE (5): Page not found
+2017-11-25T13:26:32+00:00 NOTICE (5): Invalid controller specified (js)
+2017-11-25T13:26:32+00:00 NOTICE (5): #0 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#2 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#3 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#4 {main}
+2017-11-25T13:26:32+00:00 NOTICE (5): array (
+  'controller' => 'js',
+  'action' => 'jquery.fileupload.css',
+  'module' => 'default',
+)
+2017-11-25T14:04:07+00:00 CRIT (2): Application error
+2017-11-25T14:04:07+00:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pre_nome' in 'order clause'
+2017-11-25T14:04:07+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_pre...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(77): Zend_Db_Table_Abstract->fetchAll(NULL, 'pre_nome')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->transcriptionAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('transcriptionAc...')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-11-25T14:04:07+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'transcription',
+  'id' => '11',
+  'module' => 'default',
+)
+2017-11-25T14:04:22+00:00 CRIT (2): Application error
+2017-11-25T14:04:22+00:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pre_nome' in 'order clause'
+2017-11-25T14:04:22+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_pre...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(77): Zend_Db_Table_Abstract->fetchAll(NULL, 'pre_nome')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->transcriptionAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('transcriptionAc...')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-11-25T14:04:22+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'transcription',
+  'id' => '11',
+  'module' => 'default',
+)
+2017-11-25T14:55:55+00:00 CRIT (2): Application error
+2017-11-25T14:55:55+00:00 CRIT (2): SQLSTATE[HY000]: General error: 1364 Field 'tpa_id' doesn't have a default value
+2017-11-25T14:55:55+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('INSERT INTO `tb...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(575): Zend_Db_Adapter_Pdo_Abstract->query('INSERT INTO `tb...', Array)
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1076): Zend_Db_Adapter_Abstract->insert('tbl_atos', Array)
+#5 D:\dev\www\xango_dev\library\Xango\AbstractModel.php(39): Zend_Db_Table_Abstract->insert(Array)
+#6 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(102): Xango_AbstractModel->save(Array)
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->atoEditAction()
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('atoEditAction')
+#9 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#10 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#11 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#12 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#13 {main}
+2017-11-25T14:55:55+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'ato-edit',
+  'ftn_id' => '11',
+  'predef' => '4',
+  'module' => 'default',
+)
+2017-11-27T20:48:46+00:00 CRIT (2): Application error
+2017-11-27T20:48:46+00:00 CRIT (2): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') ORDER BY `tar_status` ASC, `tar_tipo` ASC' at line 1
+2017-11-27T20:48:46+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_tar...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(79): Zend_Db_Table_Abstract->fetchAll('ftn_id = ', Array)
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->transcriptionAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('transcriptionAc...')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-11-27T20:48:46+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'transcription',
+  'id' => '11',
+  'module' => 'default',
+)
+2017-11-27T20:54:25+00:00 CRIT (2): Application error
+2017-11-27T20:54:25+00:00 CRIT (2): SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'ftn_id' in where clause is ambiguous
+2017-11-27T20:54:25+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT tar.tar_...', Array)
+#3 D:\dev\www\xango_dev\application\models\Task.php(24): Zend_Db_Adapter_Pdo_Abstract->query('SELECT tar.tar_...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(81): Xango_Model_Task->getFullTasks('ftn_id = 11')
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->transcriptionAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('transcriptionAc...')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-11-27T20:54:25+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'transcription',
+  'id' => '11',
+  'module' => 'default',
+)
+2017-11-27T20:55:08+00:00 CRIT (2): Application error
+2017-11-27T20:55:08+00:00 CRIT (2): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.usu_id_encarregado, tar.usu_id_mandante, tar.ftn_id,
+						usu.usu_nome AS man' at line 2
+2017-11-27T20:55:08+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT tar.tar_...', Array)
+#3 D:\dev\www\xango_dev\application\models\Task.php(24): Zend_Db_Adapter_Pdo_Abstract->query('SELECT tar.tar_...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(81): Xango_Model_Task->getFullTasks('tar.ftn_id = 11')
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->transcriptionAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('transcriptionAc...')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-11-27T20:55:08+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'transcription',
+  'id' => '11',
+  'module' => 'default',
+)
+2017-11-27T21:32:55+00:00 CRIT (2): Application error
+2017-11-27T21:32:55+00:00 CRIT (2): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+2017-11-27T21:32:55+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_gru...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1437): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(297): Zend_Db_Table_Abstract->fetchRow('gif_id = 254444...')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->giValidationAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('giValidationAct...')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-11-27T21:32:55+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'gi-validation',
+  'module' => 'default',
+  'gi' => '2544444463',
+)
+2017-11-27T21:33:13+00:00 CRIT (2): Application error
+2017-11-27T21:33:13+00:00 CRIT (2): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+2017-11-27T21:33:13+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_gru...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1437): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(297): Zend_Db_Table_Abstract->fetchRow('gif_id = 254444...')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->giValidationAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('giValidationAct...')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-11-27T21:33:13+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'gi-validation',
+  'module' => 'default',
+  'gi' => '2544444463$ato=13',
+)
+2017-11-27T23:12:43+00:00 CRIT (2): Application error
+2017-11-27T23:12:43+00:00 CRIT (2): Plugin by name 'GetController' was not found in the registry; used paths:
+Zend_View_Helper_: Zend/View/Helper/;D:/dev/www/xango_dev/application/modules/default/views\helpers/
+2017-11-27T23:12:43+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\View\Abstract.php(1182): Zend_Loader_PluginLoader->load('GetController')
+#1 D:\dev\www\xango_dev\library\Zend\View\Abstract.php(618): Zend_View_Abstract->_getPlugin('helper', 'GetController')
+#2 D:\dev\www\xango_dev\library\Zend\View\Abstract.php(344): Zend_View_Abstract->getHelper('getController')
+#3 D:\dev\www\xango_dev\application\modules\default\views\scripts\index\index.phtml(18): Zend_View_Abstract->__call('getController', Array)
+#4 D:\dev\www\xango_dev\library\Zend\View.php(108): include('D:\\dev\\www\\xang...')
+#5 D:\dev\www\xango_dev\library\Zend\View\Abstract.php(888): Zend_View->_run('D:/dev/www/xang...')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(900): Zend_View_Abstract->render()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(921): Zend_Controller_Action_Helper_ViewRenderer->renderScript('index/index.pht...', NULL)
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(960): Zend_Controller_Action_Helper_ViewRenderer->render()
+#9 D:\dev\www\xango_dev\library\Zend\Controller\Action\HelperBroker.php(277): Zend_Controller_Action_Helper_ViewRenderer->postDispatch()
+#10 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(527): Zend_Controller_Action_HelperBroker->notifyPostDispatch()
+#11 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('indexAction')
+#12 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#14 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#15 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#16 {main}
+2017-11-27T23:12:43+00:00 CRIT (2): array (
+  'controller' => 'index',
+  'action' => 'index',
+  'module' => 'default',
+)
+2017-11-27T23:12:58+00:00 CRIT (2): Application error
+2017-11-27T23:12:58+00:00 CRIT (2): Plugin by name 'GetRequest' was not found in the registry; used paths:
+Zend_View_Helper_: Zend/View/Helper/;D:/dev/www/xango_dev/application/modules/default/views\helpers/
+2017-11-27T23:12:58+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\View\Abstract.php(1182): Zend_Loader_PluginLoader->load('GetRequest')
+#1 D:\dev\www\xango_dev\library\Zend\View\Abstract.php(618): Zend_View_Abstract->_getPlugin('helper', 'GetRequest')
+#2 D:\dev\www\xango_dev\library\Zend\View\Abstract.php(344): Zend_View_Abstract->getHelper('getRequest')
+#3 D:\dev\www\xango_dev\application\modules\default\views\scripts\index\index.phtml(18): Zend_View_Abstract->__call('getRequest', Array)
+#4 D:\dev\www\xango_dev\library\Zend\View.php(108): include('D:\\dev\\www\\xang...')
+#5 D:\dev\www\xango_dev\library\Zend\View\Abstract.php(888): Zend_View->_run('D:/dev/www/xang...')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(900): Zend_View_Abstract->render()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(921): Zend_Controller_Action_Helper_ViewRenderer->renderScript('index/index.pht...', NULL)
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(960): Zend_Controller_Action_Helper_ViewRenderer->render()
+#9 D:\dev\www\xango_dev\library\Zend\Controller\Action\HelperBroker.php(277): Zend_Controller_Action_Helper_ViewRenderer->postDispatch()
+#10 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(527): Zend_Controller_Action_HelperBroker->notifyPostDispatch()
+#11 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('indexAction')
+#12 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#14 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#15 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#16 {main}
+2017-11-27T23:12:58+00:00 CRIT (2): array (
+  'controller' => 'index',
+  'action' => 'index',
+  'module' => 'default',
+)
+2017-11-27T23:13:25+00:00 CRIT (2): Application error
+2017-11-27T23:13:25+00:00 CRIT (2): Plugin by name 'GetRequest' was not found in the registry; used paths:
+Zend_View_Helper_: Zend/View/Helper/;D:/dev/www/xango_dev/application/modules/default/views\helpers/
+2017-11-27T23:13:25+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\View\Abstract.php(1182): Zend_Loader_PluginLoader->load('GetRequest')
+#1 D:\dev\www\xango_dev\library\Zend\View\Abstract.php(618): Zend_View_Abstract->_getPlugin('helper', 'GetRequest')
+#2 D:\dev\www\xango_dev\library\Zend\View\Abstract.php(344): Zend_View_Abstract->getHelper('getRequest')
+#3 D:\dev\www\xango_dev\application\modules\default\views\scripts\index\index.phtml(18): Zend_View_Abstract->__call('getRequest', Array)
+#4 D:\dev\www\xango_dev\library\Zend\View.php(108): include('D:\\dev\\www\\xang...')
+#5 D:\dev\www\xango_dev\library\Zend\View\Abstract.php(888): Zend_View->_run('D:/dev/www/xang...')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(900): Zend_View_Abstract->render()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(921): Zend_Controller_Action_Helper_ViewRenderer->renderScript('index/index.pht...', NULL)
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(960): Zend_Controller_Action_Helper_ViewRenderer->render()
+#9 D:\dev\www\xango_dev\library\Zend\Controller\Action\HelperBroker.php(277): Zend_Controller_Action_Helper_ViewRenderer->postDispatch()
+#10 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(527): Zend_Controller_Action_HelperBroker->notifyPostDispatch()
+#11 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('indexAction')
+#12 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#13 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#14 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#15 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#16 {main}
+2017-11-27T23:13:25+00:00 CRIT (2): array (
+  'controller' => 'index',
+  'action' => 'index',
+  'module' => 'default',
+)
+2017-12-03T23:44:09+00:00 CRIT (2): Application error
+2017-12-03T23:44:09+00:00 CRIT (2): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+2017-12-03T23:44:09+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT `tbl_ato...', Array)
+#3 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1575): Zend_Db_Adapter_Pdo_Abstract->query(Object(Zend_Db_Table_Select))
+#4 D:\dev\www\xango_dev\library\Zend\Db\Table\Abstract.php(1390): Zend_Db_Table_Abstract->_fetch(Object(Zend_Db_Table_Select))
+#5 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(407): Zend_Db_Table_Abstract->fetchAll('ftn_id = ')
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->orderActsSaveAction()
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('orderActsSaveAc...')
+#8 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#9 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#10 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#11 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#12 {main}
+2017-12-03T23:44:09+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'order-acts-save',
+  'module' => 'default',
+  'ftn_id' => '20',
+  'prefix' => 'fl.',
+  'sufix' => '',
+  'divide' => '-',
+  'front' => '',
+  'verso' => 'v',
+)
+2017-12-03T23:46:59+00:00 CRIT (2): Application error
+2017-12-03T23:46:59+00:00 CRIT (2): Specified column "ato_reference" is not in the row
+2017-12-03T23:46:59+00:00 CRIT (2): #0 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(411): Zend_Db_Table_Row_Abstract->__get('ato_reference')
+#1 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->orderActsSaveAction()
+#2 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('orderActsSaveAc...')
+#3 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#4 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#5 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#6 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#7 {main}
+2017-12-03T23:46:59+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'order-acts-save',
+  'module' => 'default',
+  'ftn_id' => '20',
+  'prefix' => 'fl.',
+  'suffix' => '',
+  'divide' => '-',
+  'front' => '',
+  'verso' => 'v',
+)
+2017-12-15T10:26:12+00:00 CRIT (2): Application error
+2017-12-15T10:26:12+00:00 CRIT (2): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')					
+					ORDER BY ttr.ttr_nome' at line 5
+2017-12-15T10:26:12+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT DISTINCT...', Array)
+#3 D:\dev\www\xango_dev\application\models\AtributoGrupoInformacao.php(52): Zend_Db_Adapter_Pdo_Abstract->query('SELECT DISTINCT...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(478): Xango_Model_AtributoGrupoInformacao->attrTypesBySrc(NULL)
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->validateEntityAttrAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('validateEntityA...')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-12-15T10:26:12+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'validate-entity-attr',
+  'id' => '20',
+  'module' => 'default',
+)
+2017-12-15T10:26:14+00:00 CRIT (2): Application error
+2017-12-15T10:26:14+00:00 CRIT (2): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')					
+					ORDER BY ttr.ttr_nome' at line 5
+2017-12-15T10:26:14+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT DISTINCT...', Array)
+#3 D:\dev\www\xango_dev\application\models\AtributoGrupoInformacao.php(52): Zend_Db_Adapter_Pdo_Abstract->query('SELECT DISTINCT...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(478): Xango_Model_AtributoGrupoInformacao->attrTypesBySrc(NULL)
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->validateEntityAttrAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('validateEntityA...')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-12-15T10:26:14+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'validate-entity-attr',
+  'id' => '20',
+  'module' => 'default',
+)
+2017-12-15T10:26:19+00:00 CRIT (2): Application error
+2017-12-15T10:26:19+00:00 CRIT (2): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')					
+					ORDER BY ttr.ttr_nome' at line 5
+2017-12-15T10:26:19+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT DISTINCT...', Array)
+#3 D:\dev\www\xango_dev\application\models\AtributoGrupoInformacao.php(52): Zend_Db_Adapter_Pdo_Abstract->query('SELECT DISTINCT...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(478): Xango_Model_AtributoGrupoInformacao->attrTypesBySrc(NULL)
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->validateEntityAttrAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('validateEntityA...')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-12-15T10:26:19+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'validate-entity-attr',
+  'id' => '20',
+  'module' => 'default',
+)
+2017-12-15T10:26:58+00:00 CRIT (2): Application error
+2017-12-15T10:26:58+00:00 CRIT (2): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')					
+					ORDER BY ttr.ttr_nome' at line 5
+2017-12-15T10:26:58+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT DISTINCT...', Array)
+#3 D:\dev\www\xango_dev\application\models\AtributoGrupoInformacao.php(52): Zend_Db_Adapter_Pdo_Abstract->query('SELECT DISTINCT...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(478): Xango_Model_AtributoGrupoInformacao->attrTypesBySrc(Array)
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->validateEntityAttrAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('validateEntityA...')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-12-15T10:26:58+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'validate-entity-attr',
+  'id' => '20',
+  'module' => 'default',
+)
+2017-12-15T10:27:57+00:00 CRIT (2): Application error
+2017-12-15T10:27:57+00:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'f.ftn_id' in 'where clause'
+2017-12-15T10:27:57+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT DISTINCT...', Array)
+#3 D:\dev\www\xango_dev\application\models\AtributoGrupoInformacao.php(52): Zend_Db_Adapter_Pdo_Abstract->query('SELECT DISTINCT...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(478): Xango_Model_AtributoGrupoInformacao->attrTypesBySrc(Array)
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->validateEntityAttrAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('validateEntityA...')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-12-15T10:27:57+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'validate-entity-attr',
+  'id' => '20',
+  'module' => 'default',
+)
+2017-12-15T10:28:44+00:00 CRIT (2): Application error
+2017-12-15T10:28:44+00:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'gif.ftn_id' in 'where clause'
+2017-12-15T10:28:44+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT DISTINCT...', Array)
+#3 D:\dev\www\xango_dev\application\models\AtributoGrupoInformacao.php(54): Zend_Db_Adapter_Pdo_Abstract->query('SELECT DISTINCT...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(478): Xango_Model_AtributoGrupoInformacao->attrTypesBySrc(Array)
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->validateEntityAttrAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('validateEntityA...')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-12-15T10:28:44+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'validate-entity-attr',
+  'id' => '20',
+  'module' => 'default',
+)
+2017-12-15T10:39:11+00:00 CRIT (2): Application error
+2017-12-15T10:39:11+00:00 CRIT (2): script 'fontes/list-entity-attr.phtml' not found in path (D:/dev/www/xango_dev/application/modules/default/views\scripts/)
+2017-12-15T10:39:11+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\View\Abstract.php(884): Zend_View_Abstract->_script('fontes/list-ent...')
+#1 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(900): Zend_View_Abstract->render('fontes/list-ent...')
+#2 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(921): Zend_Controller_Action_Helper_ViewRenderer->renderScript('fontes/list-ent...', NULL)
+#3 D:\dev\www\xango_dev\library\Zend\Controller\Action\Helper\ViewRenderer.php(960): Zend_Controller_Action_Helper_ViewRenderer->render()
+#4 D:\dev\www\xango_dev\library\Zend\Controller\Action\HelperBroker.php(277): Zend_Controller_Action_Helper_ViewRenderer->postDispatch()
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(527): Zend_Controller_Action_HelperBroker->notifyPostDispatch()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('listEntityAttrA...')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-12-15T10:39:11+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'list-entity-attr',
+  'module' => 'default',
+  'ftn_id' => '20',
+  'ttr_id' => 'cargo',
+)
+2017-12-15T10:40:52+00:00 CRIT (2): Application error
+2017-12-15T10:40:52+00:00 CRIT (2): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ato.ato_ordem' in 'order clause'
+2017-12-15T10:40:52+00:00 CRIT (2): #0 D:\dev\www\xango_dev\library\Zend\Db\Statement.php(303): Zend_Db_Statement_Pdo->_execute(Array)
+#1 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Abstract.php(479): Zend_Db_Statement->execute(Array)
+#2 D:\dev\www\xango_dev\library\Zend\Db\Adapter\Pdo\Abstract.php(238): Zend_Db_Adapter_Abstract->query('SELECT DISTINCT...', Array)
+#3 D:\dev\www\xango_dev\application\models\AtributoGrupoInformacao.php(36): Zend_Db_Adapter_Pdo_Abstract->query('SELECT DISTINCT...')
+#4 D:\dev\www\xango_dev\application\modules\default\controllers\FontesController.php(485): Xango_Model_AtributoGrupoInformacao->attrBySrc(Array, 'cargo', 'ato.ato_ordem')
+#5 D:\dev\www\xango_dev\library\Zend\Controller\Action.php(516): FontesController->listEntityAttrAction()
+#6 D:\dev\www\xango_dev\library\Zend\Controller\Dispatcher\Standard.php(308): Zend_Controller_Action->dispatch('listEntityAttrA...')
+#7 D:\dev\www\xango_dev\library\Zend\Controller\Front.php(954): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#8 D:\dev\www\xango_dev\library\Zend\Application\Bootstrap\Bootstrap.php(97): Zend_Controller_Front->dispatch()
+#9 D:\dev\www\xango_dev\init.php(36): Zend_Application_Bootstrap_Bootstrap->run()
+#10 D:\dev\www\xango_dev\public\index.php(3): Application::run()
+#11 {main}
+2017-12-15T10:40:52+00:00 CRIT (2): array (
+  'controller' => 'fontes',
+  'action' => 'list-entity-attr',
+  'module' => 'default',
+  'ftn_id' => '20',
+  'ttr_id' => 'cargo',
+)

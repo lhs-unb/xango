@@ -15,7 +15,8 @@
 	<?php $this->headScript()->appendFile($_SERVER["CONTEXT_PREFIX"] .'/js/stupidtable.min.js','text/javascript'); ?>
 	<?php $this->headScript()->appendFile($_SERVER["CONTEXT_PREFIX"] .'/js/jquery.validate.min.js','text/javascript'); ?>
 	<?php $this->headScript()->appendFile($_SERVER["CONTEXT_PREFIX"] .'/js/featherlight.min.js','text/javascript'); ?>
-
+	<?php $this->headScript()->appendFile($_SERVER["CONTEXT_PREFIX"] .'/js/jquery-ui/jquery-ui.min.js','text/javascript'); ?>
+	
 	<?php echo $this->headScript(); ?>
 	<?php echo $this->headMeta(); ?>
 	<?php echo $this->headLink(); ?>
@@ -31,25 +32,23 @@
 		</div>
 
 		<div id="sidebar">
+			
+			
+			<p>Olá <?php echo $this->user->usu_nome; ?>! Seu score é <strong><?php echo number_format($this->user->usu_score); ?>.</strong></p>
+			<!--<progress max="<?php echo (int)$this->parameters['base_exp']*pow((int)$this->user->usu_level,(int)$this->parameters['factor_exp']); ?>" value="<?php echo $this->user->usu_score; ?>"></progress> <?php echo $this->user->usu_score; ?> /  <?php echo (int)$this->parameters['base_exp']*pow((int)$this->user->usu_level,(int)$this->parameters['factor_exp']); ?> - Level <?php echo $this->user->usu_level; ?>-->
 
-			<p>Selecione o módulo e a funcionalidade no menu abaixo:</p>
-
+			
 			<div id="menu">
+				<div class="item-menu"><a href="<?php echo $this->url(array('controller'=>'index'),'default',true); ?>">Painel</a></div>
+				
 				<div class="item-menu">Pessoal</div>
 				<div class="menu-container">
-					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'index'),'default',true); ?>">Painel</a></div>
 					<div class="item-submenu">Perfil</div>
 					<div class="item-submenu">Mensagens</div>
 					<div class="item-submenu">Anotações</div>
 					<div class="item-submenu">Pastas de Pesquisa</div>
 				</div>
 
-				<div class="item-menu">Administração</div>
-				<div class="menu-container">
-					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'grupos-trabalho'),'default',true); ?>">Grupos de Trabalho</a></div>
-					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'usuarios'),'default',true); ?>">Usuários</a></div>
-					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'acervos'),'default',true); ?>">Acervos</a></div>
-				</div>
 
 				<div class="item-menu">Fontes</div>
 				<div class="menu-container">
@@ -59,19 +58,25 @@
 					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'tipos-vinculo'),'default',true); ?>">Tipos de Vínculo</a></div>
 					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'tipos-funcao'),'default',true); ?>">Tipos de Função</a></div>
 				</div>
-
-				<div class="item-menu ultimo">Tipologias</div>
+				
+				<?php if($this->user->usu_admin) { ?>
+				<div class="item-menu">Administração</div>
 				<div class="menu-container">
-					<div class="item-submenu">Pre-definições</div>
+					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'grupos-trabalho'),'default',true); ?>">Grupos de Trabalho</a></div>
+					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'usuarios'),'default',true); ?>">Usuários</a></div>
+					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'acervos'),'default',true); ?>">Acervos</a></div>
 				</div>
+
+				<div class="item-menu ultimo">Auxiliar</div>
+				<div class="menu-container">
+					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'predefinitions'),'default',true); ?>">Predefinições</a></div>
+				</div>
+				<?php } ?>
 			</div>
 		</div>
 
 		<div id="main">
 
-			<div style="float: right; margin-right: 30px;">
-				<progress max="<?php echo (int)$this->parameters['base_exp']*pow((int)$this->user->usu_level,(int)$this->parameters['factor_exp']); ?>" value="<?php echo $this->user->usu_score; ?>"></progress> <?php echo $this->user->usu_score; ?> /  <?php echo (int)$this->parameters['base_exp']*pow((int)$this->user->usu_level,(int)$this->parameters['factor_exp']); ?> - Level <?php echo $this->user->usu_level; ?>
-			</div>
 
 
 			<?php if(isset($this->system_message)) {

@@ -7,7 +7,8 @@ class Xango_AbstractController extends Zend_Controller_Action {
 		00001 => 'Operação realizado com sucesso.',
 		00002 => 'Operação não pode ser realizada.',
 		00003 => 'Usuário ou senha inválidos.',
-		00004 => 'Operação não pode ser realizada pois há dependências atreladas a este objeto.'
+		00004 => 'Operação não pode ser realizada pois há dependências atreladas a este objeto.',
+		00005 => 'Formato de arquivo inválido. Use apenas arquivos JSON.'
 	);
 	
 	
@@ -30,12 +31,11 @@ class Xango_AbstractController extends Zend_Controller_Action {
 		// Load config files
 		$this->config = $this->getInvokeArg('bootstrap')->getOptions();
 		
-		// Experience system
+		// User information
 		$this->user = $this->auth->getIdentity();
 		$this->view->user = $this->user;
-		$this->parameters = $this->config['appSettings']['user'];
-		$this->view->parameters = $this->parameters;	
 		
+		$this->objUsuario = new Xango_Model_Usuario();
 	}
 	
 	public function preDispatch() {
@@ -69,7 +69,7 @@ class Xango_AbstractController extends Zend_Controller_Action {
 		$this->_redirect($target);
 	}
 	
-	public function setRedirectException($target, $e) {
+	public function setRedirectException($target, $e, $alt = null) {
 	
 		$code = $e->getCode();
 		switch($code) {
