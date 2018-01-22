@@ -59,7 +59,7 @@ class TasksController extends Xango_AbstractController {
 				$this->setRedirect('/fontes/transcription/id/'. $task['ftn_id'], 1, 1);
 			} catch (Exception $e) {
 				$this->db->rollBack();
-				$this->setRedirectException('/usfontesuarios', $e);
+				$this->setRedirectException('/fontes', $e);
 			}
 		}		
 	}

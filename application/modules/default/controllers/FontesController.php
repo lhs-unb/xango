@@ -18,6 +18,7 @@ class FontesController extends Xango_AbstractController {
 		$this->objUsuario = new Xango_Model_Usuario();
 		$this->objPredefinition = new Xango_Model_Predefinition();
         $this->objTask = new Xango_Model_Task();
+        $this->objMemo = new Xango_Model_Memo();
 		
 		$this->view->title = 'Fontes';
     }
@@ -94,6 +95,7 @@ class FontesController extends Xango_AbstractController {
 		if($id = $this->getRequest()->getParam("id")) {
 			$this->view->predefinitions = $this->objPredefinition->fetchAll(null, "pre_name");
 			$this->view->tasks = $this->objTask->getFullTasks("tar.ftn_id = ". $id ." AND tar.tar_status IN (1,2,4)");
+			$this->view->memos = $this->objMemo->getFullMemos("mem.ftn_id = ". $id);
 			$this->view->fonte = $this->objFonte->getFonteFull($id);
 		}	
 	}

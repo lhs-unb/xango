@@ -83,6 +83,41 @@ $statuses = array(
 	});
 	</script>
 	
+	<div id="memos" class="accordion closed">
+		<h4>
+			Memos &nbsp;
+			<a href="<?php echo $this->url(array('controller'=>'memos', 'action'=>'edit', 'ftn_id'=>$this->fonte['ftn_id']),'default',true) ?>" lightbox="true"><img src="/img/icons/set1/plus_16.png"></a>
+		</h4>
+		
+		<div>
+		<table class="tabela-busca">
+			<thead>
+				<tr>
+					<th width="69%">Memo</th>
+					<th width="15%">Autor</th>
+					<th width="10%">Últ. Atualização</th>
+					<th width="6%"></th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php foreach($this->memos as $memo) { ?>
+				<tr>
+					<td><?php echo $memo->mem_descricao; ?></td>
+					<td><?php echo $memo->usu_nome; ?></td>
+					<td><?php echo $memo->mem_alteracao; ?></td>
+					<td class="actions">
+					<?php // No futuro, só editores devem poder editar ou apagar. ?>
+						<a href="<?php echo $this->url(array('controller'=>'memos', 'action'=>'edit', 'id'=>$memo->mem_id),'default',true); ?>" lightbox="true"><img src="/img/icons/set1/document_pencil_16.png"></a>
+						<a href="<?php echo $this->url(array('controller'=>'memos', 'action'=>'delete', 'id'=>$memo->mem_id),'default',true); ?>" delete="true"><img src="/img/icons/set1/delete_16.png"></a>
+					</td>
+				</tr>
+				<?php } ?>
+			</tbody>
+		</table>
+		</div>
+	</div>
+	
+	
 	<div id="tasks" class="accordion closed">
 		<h4>
 			Tarefas &nbsp;

@@ -1,0 +1,17 @@
+<form action="<?php echo $this->url(array('controller'=>'memos', 'action'=>'save'),'default',true); ?>" method="POST">
+<fieldset class="form-edit">
+	<input type="hidden" name="ftn_id" value="<?php echo $this->ftn_id; ?>">
+	<input type="hidden" name="mem_id" value="<?php echo $this->memo['mem_id']; ?>">
+	<ul>
+		<li>
+			<label for="mem_descricao">Descrição</label>
+			<textarea name="mem_descricao" id="mem_descricao" rows="10" cols="100"><?php echo $this->memo['mem_descricao']; ?></textarea>
+		</li>
+		</li>
+		<li class="botoes">
+			<input type="submit" class="btn" value="Salvar"/>
+			<input type="button" class="btn" value="Voltar" onClick='$.featherlight.close();' />
+		</li>
+	</ul>
+</fieldset>
+</form>
