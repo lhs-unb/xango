@@ -29,6 +29,7 @@ class MemosController extends Xango_AbstractController {
 			$data = $this->getRequest()->getPost();
 			$this->db->beginTransaction();
 			try {
+				$data['mem_descricao'] = nl2br($data['mem_descricao']);
 				$data['mem_ordem'] = 0;
 				$data['mem_alteracao'] =  new Zend_Db_Expr("NOW()");
 				$data['usu_id'] = $this->user->usu_id;

@@ -16,11 +16,13 @@ $tipos_status = array(
 
 ?>
 
+<?php if($this->user->is_leader) { ?>
 <div class="div-botoes">
 	<a class="btn" href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'edit'),'default',true) ?>" lightbox="true">
 		<img src="/img/icons/set1/plus_16.png"> Novo
 	</a>
 </div>
+<?php } ?>
 
 <table class="tabela-busca">
 	<thead>
@@ -43,8 +45,10 @@ $tipos_status = array(
 			<td><?php echo $fonte->ftn_descricao; ?></td>
 			<td class="actions">
 				<a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'transcription', 'id'=>$fonte->ftn_id),'default',true) ?>"><img src="/img/icons/set1/wand_16.png"></a>
+				<?php if($this->user->is_leader) { ?>
 				<a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'edit', 'id'=>$fonte->ftn_id),'default',true) ?>" lightbox="true"><img src="/img/icons/set1/document_pencil_16.png"></a>
 				<a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'delete', 'id'=>$fonte->ftn_id),'default',true) ?>" delete="true"><img src="/img/icons/set1/delete_16.png"></a>
+				<?php } ?>
 			</td>
 		</tr>
 		<?php } ?>

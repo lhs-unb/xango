@@ -49,14 +49,16 @@
 					<div class="item-submenu">Pastas de Pesquisa</div>
 				</div>
 
-
 				<div class="item-menu">Fontes</div>
 				<div class="menu-container">
 					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'fontes'),'default',true); ?>">Fontes</a></div>
+					
+					<?php if($this->user->is_monitor) { ?>
 					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'tipos-ato'),'default',true); ?>">Tipos de Ato</a></div>
 					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'tipos-atributo'),'default',true); ?>">Tipos de Atributo</a></div>
 					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'tipos-vinculo'),'default',true); ?>">Tipos de Vínculo</a></div>
 					<div class="item-submenu"><a href="<?php echo $this->url(array('controller'=>'tipos-funcao'),'default',true); ?>">Tipos de Função</a></div>
+					<?php } ?>
 				</div>
 				
 				<?php if($this->user->usu_admin) { ?>

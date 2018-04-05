@@ -1,3 +1,5 @@
 \data\logs\errors.log
 \application\config\config.ini
 *.log
+*.log
+*.log

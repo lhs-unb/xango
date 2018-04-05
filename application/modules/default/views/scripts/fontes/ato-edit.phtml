@@ -156,6 +156,7 @@ function atributo_ato_form(obj) {
 				success: function(html) {
 					if(html != "error") {
 						retorno = jQuery.parseJSON(html);
+						
 						$("input[name='aat_id'][sequencia='"+ $(form).attr('sequencia') +"']").val(retorno.aat_id);
 
 						$(form).find(':input').each(function() { $(this).prop("disabled", true) });
@@ -168,14 +169,15 @@ function atributo_ato_form(obj) {
 		},
 		errorPlacement: function(error, element) {}
 	});
-	
 }
 
 $(document).on('click', ".btn-atributo-ato-edit", function() {
 	$("input[name='aat_valor'][sequencia='"+ $(this).attr('sequencia') +"']").attr("disabled", false);
 	$("input[name='aat_metadata'][sequencia='"+ $(this).attr('sequencia') +"']").attr("disabled", false);
+	$("input[name='aat_id'][sequencia='"+ $(this).attr('sequencia') +"']").attr("disabled", false);
 	$("select[name='ttr_id'][sequencia='"+ $(this).attr('sequencia') +"']").attr("disabled", false);
 	$("input[type='image'][sequencia='"+ $(this).attr('sequencia') +"']").show();
+	$("input[type='image'][sequencia='"+ $(this).attr('sequencia') +"']").attr("disabled", false);
 	$(".btn-atributo-ato-edit[sequencia='"+ $(this).attr('sequencia') +"']").hide();	
 });
 

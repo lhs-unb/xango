@@ -24,7 +24,7 @@ class FontesController extends Xango_AbstractController {
     }
 
 	function indexAction() {
-		$this->view->fontes = $this->objFonte->getAllDocuments();
+		$this->view->fontes = $this->objFonte->getAllDocuments(array_keys($this->user->gts));
 	}
 	
 	function editAction() {		
@@ -198,20 +198,25 @@ class FontesController extends Xango_AbstractController {
 		if($this->getRequest()->isPost()) {
 			$data = $this->getRequest()->getPost();
 			
-			$data['aat_metadata'] = (isset($data['aat_metadata'])) ? $data['aat_metadata'] : 0;
+			$data['aat_metadata'] = (isset($data['aat_metadata'])) ? 1 : 0;
 			
 			$this->db->beginTransaction();
 			try {
 				
+				$data['aat_valor'] = trim($data['aat_valor']);
+				$data['aat_valor'] = trim($data['aat_valor']);				
+				
+				// add a score point if new attribute
 				if(empty($data['aat_id'])) {
 					$this->objUsuario->addScore($this->user);
 				}
-				$data['aat_valor'] = trim($data['aat_valor']);
 				
 				$data['aat_id'] = $this->objAtributoAto->save($data);
 								
 				$this->db->commit();
 				echo json_encode($data);
+				die;				
+				
 			} catch (Exception $e) {
 				$this->db->rollBack();
 				echo "error";
@@ -271,7 +276,7 @@ class FontesController extends Xango_AbstractController {
 		if($this->getRequest()->isPost()) {
 			$data = $this->getRequest()->getPost();
 			
-			$data['gia_metadata'] = (isset($data['gia_metadata'])) ? $data['gia_metadata'] : 0;
+			$data['gia_metadata'] = (isset($data['gia_metadata'])) ? 1 : 0;
 			
 			$this->db->beginTransaction();
 			try {
@@ -472,7 +477,7 @@ class FontesController extends Xango_AbstractController {
 	
 	
 	/*
-	Validate the Attributes of the Entitys, offering a easy and fast way to check if they are correct
+	Validate the Attributes of the Entities, offering a easy and fast way to check if they are correct
 	*/	
 	function validateEntityAttrAction() {
 		$this->lightbox();
@@ -487,6 +492,16 @@ class FontesController extends Xango_AbstractController {
 			$data = $this->getRequest()->getPost();
 			$this->view->attrs = $this->objAtributoGrupoInformacao->attrBySrc(array($data['ftn_id']), $data['ttr_id'], "a.ato_ordem");
 			$this->view->ftn_id = $data['ftn_id'];
+		}
+	}
+	
+	/*
+	Create a ordered list of the attribute "data" (date) of the Acts in a source
+	*/
+	function consolidateDatesAction() {
+		if($id = $this->getRequest()->getParam("id")) {	
+			$this->view->attrs = $this->objAtributoAto->attrBySrc(array($id), "data");
+			$this->view->ftn_id = $id;
 		}
 	}
 }

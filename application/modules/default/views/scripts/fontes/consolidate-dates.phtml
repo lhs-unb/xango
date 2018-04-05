@@ -1,10 +1,8 @@
-<a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'validate-entity-attr','id'=>$this->ftn_id),'default',false); ?>" lightbox="true">[Validar Atributos]</a><br />
 <table class="tabela-busca">
 	<thead>
 		<tr>
 			<th width="15%">Referência</th>
 			<th width="20%">Atributos</th>
-			<th width="65%">Atributos</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -14,8 +12,7 @@
 				<?php echo $attr->ato_referencia; ?>
 				<a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'ato-edit','ato_id'=>$attr->ato_id),'default',true) ?>" lightbox="true"><img src="/img/icons/set1/document_pencil_16.png"></a>
 			</td>
-			<td><?php echo $attr->ttr_id; ?></td>
-			<td><?php echo $attr->gia_valor; ?></td>
+			<td><?php echo $attr->aat_valor; ?></td>
 		</tr>	
 	<?php } ?>
 	</tbody>

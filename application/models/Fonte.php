@@ -6,7 +6,12 @@ class Xango_Model_Fonte extends Xango_AbstractModel {
 	protected $_primary = "ftn_id";
     protected $_sequence = "ftn_id";
 	
-	public function getAllDocuments() {
+	public function getAllDocuments($gts = null) {
+		$where = "";
+		if($gts) {
+			$where = "AND ftn.gtr_id IN (". implode(",", $gts) . ")";
+		}		
+		
 		$sql = "SELECT ftn.ftn_id, ftn.ftn_nome, ftn.ftn_status, ftn.ftn_convencao, ftn.ftn_cota, ftn.ftn_descricao, ftn.gtr_id, ftn.acv_id,
 		acv.acv_nome, gtr.gtr_nome
 	
@@ -17,6 +22,9 @@ class Xango_Model_Fonte extends Xango_AbstractModel {
 			
 		JOIN tbl_grupos_trabalho AS gtr
 			ON gtr.gtr_id = ftn.gtr_id
+		
+		WHERE 1=1
+		". $where ."
 		
 		ORDER BY ftn.ftn_nome";
 		
@@ -45,7 +53,7 @@ class Xango_Model_Fonte extends Xango_AbstractModel {
 		$fonte = (array)$stmt->fetch();
 		
 		$sql = "
-		SELECT ato.ato_id, ato.ato_referencia, ato.tpa_id, ato.ato_ordem, tpa.tpa_nome
+		SELECT ato.ato_id, ato.ato_referencia, ato.tpa_id, ato.ato_ordem, ato.ato_status, tpa.tpa_nome
 		
 			FROM tbl_atos AS ato
 			

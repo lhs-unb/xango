@@ -5,7 +5,7 @@
 	<ul>
 		<li>
 			<label for="mem_descricao">Descrição</label>
-			<textarea name="mem_descricao" id="mem_descricao" rows="10" cols="100"><?php echo $this->memo['mem_descricao']; ?></textarea>
+			<textarea name="mem_descricao" id="mem_descricao" rows="10" cols="100"><?php echo strip_tags($this->memo['mem_descricao']); ?></textarea>
 		</li>
 		</li>
 		<li class="botoes">

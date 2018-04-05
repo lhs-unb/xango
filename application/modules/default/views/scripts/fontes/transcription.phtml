@@ -14,6 +14,14 @@ $tipos_status = array(
 	5 => "Interrompida"
 );
 
+$ato_status = array (
+	1 => "em transcrição",
+	2 => "revisado",
+	3 => "publicado",
+	4 => "para revisar",
+	5 => "listado"
+);
+
 // Tasks
 
 $roles = array(
@@ -39,7 +47,8 @@ $statuses = array(
 
 <div id="fonte_transcricao">
 	<div id="dados">
-		<h4><?php echo $this->fonte['ftn_nome']; ?> (<?php echo $this->fonte['ftn_cota']; ?>) <a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'edit', 'id'=>$this->fonte['ftn_id'], 'redirect' => 'transcription'),'default',true) ?>" lightbox="true"><img src="/img/icons/set1/document_pencil_16.png"></a></h4>
+		<h4><?php echo $this->fonte['ftn_cota']; ?> <a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'edit', 'id'=>$this->fonte['ftn_id'], 'redirect' => 'transcription'),'default',true) ?>" lightbox="true"><img src="/img/icons/set1/document_pencil_16.png"></a></h4>
+		<span class="label">Título: </span><span class="info-long"><?php echo $this->fonte['ftn_nome']; ?></em></span></span></br>
 		<span class="label">Acervo: </span><span class="info"><?php echo $this->fonte['acv_nome']; ?></span>
 		<span class="label">Grupo de Trabalho: </span><span class="info"><?php echo $this->fonte['gtr_nome']; ?></span>
 		<span class="label">Convenção: </span><span class="info"><?php echo $tipos_convencao[$this->fonte['ftn_convencao']]; ?></span>
@@ -51,6 +60,7 @@ $statuses = array(
 	<div id="acoes">
 		<h4>Ferramentas</h4>
 		<a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'consolidate-names','id'=>$this->fonte['ftn_id']),'default',false); ?>">[Consolidar Nomes]</a><br />
+		<a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'consolidate-dates','id'=>$this->fonte['ftn_id']),'default',false); ?>">[Consolidar Datas]</a><br />
 		<a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'validate-entity-attr','id'=>$this->fonte['ftn_id']),'default',false); ?>" lightbox="true">[Validar Atributos]</a><br />
 		<a href="<?php echo $this->url(array('controller'=>'fontes', 'action'=>'order-acts','id'=>$this->fonte['ftn_id']),'default',false); ?>" lightbox="true">[Ordenar Atos]</a><br />
 	</div>
@@ -181,8 +191,9 @@ $statuses = array(
 		<table class="tabela-busca">
 			<thead>
 				<tr>
-					<th width="20%">Referência</th>
-					<th width="30%">Tipo ato</th>
+					<th width="10%">Referência</th>
+					<th width="10%"></th>
+					<th width="35%">Tipo ato</th>
 					<th width="40%"></th>
 					<th width="10%">Ações</th>
 				</tr>
@@ -191,6 +202,7 @@ $statuses = array(
 			<?php foreach($this->fonte['atos'] as $ato) { ?>
 				<tr>
 					<td><?php echo $ato->ato_referencia; ?></td>
+					<td><span class="badge green"><?php echo $ato_status[$ato->ato_status]; ?></span></td>
 					<td><?php echo $ato->tpa_nome; ?></td>
 					<td></td>
 					<td>					

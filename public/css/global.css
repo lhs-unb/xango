@@ -1,18 +1,18 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,800);
+@import url(http://fonts.googleapis.com/css?family=Lato);
 
 body,
 html {
 	margin:0;
 	padding:0;
 	color:#000;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Lato', sans-serif;
 	font-size: 13px;
     height:100%;
 }
 
 input, select, textarea {
 	padding: 4px;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Lato', sans-serif;
 	font-size: 13px;
 }
 
@@ -183,7 +183,7 @@ tr td.actions {
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Lato', sans-serif;
   color: #ffffff;
   font-size: 14px;
   padding: 5px 10px;
@@ -299,12 +299,24 @@ label.validate_error {
 }
 
 #fonte_transcricao div#dados span.label {
-	width: 15%;
+	width: 14%;
 	display: inline-block;
+	padding-bottom: 5px;
+	vertical-align: top;
 }
 #fonte_transcricao div#dados span.info {
-	width: 50%;
+	width: 34%;
 	display: inline-block;
+	padding-bottom: 5px;
+	vertical-align: top;
+	padding-right: 10px;
+}
+#fonte_transcricao div#dados span.info-long {
+	width: 84%;
+	display: inline-block;
+	padding-bottom: 5px;
+	vertical-align: top;
+	padding-right: 10px;
 }
 
 #fonte_transcricao div#acoes {
@@ -380,4 +392,18 @@ label.validate_error {
 div.attr_detail {
 	padding-left: 15px;
 	font-size: 0.8em;
+}
+
+/* Badges */
+
+span.badge {
+	display: inline-block;
+	font-size: 0.7em;
+	float: left;
+	text-transform: lowercase;
+	color: #FFF;
+	text-shadow: 0px .1em 0px rgba(0, 0, 0, 1);
+	padding: .3em .5em;
+	border-radius: .3em;
+	background: linear-gradient(180deg, rgba(100, 100, 100, .8) 0%, rgba(0, 0, 0, .7) 100%);
 }
